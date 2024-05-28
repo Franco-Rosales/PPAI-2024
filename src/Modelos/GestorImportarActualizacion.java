@@ -1,5 +1,10 @@
 package Modelos;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,9 +44,19 @@ public class GestorImportarActualizacion {
         return nombreBodegaSeleccionada;
     }
 
-    public void obtenerActualizacionesBodega(String nombreBodegaSeleccionada) {
-        // Realizar la llamada al endpoint para obtener la información
-        //String informacion = gestionBodegas.llamarEndpointObtenerInformacion(nombreBodegaSeleccionada);
+    public void obtenerActualizacionesBodega(String nombreBodegaSeleccionada) throws IOException, InterruptedException {
+        //como implementar la llamada a un ENDPOINT
+        String direccion = "http://localhost:8080/actualizaciones";
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(direccion))
+                .build();
+        HttpResponse<String> response = client.send(request,
+                HttpResponse.BodyHandlers.ofString());
+
+        String respuestaConActualizaciones  = response.body();
+        System.out.println(respuestaConActualizaciones);
+
 
         // Lógica para decidir si crear o actualizar un vino
         //if (informacion != null && !informacion.isEmpty()) {
@@ -70,7 +85,8 @@ public class GestorImportarActualizacion {
         // Verificar si se encontró la bodega seleccionada
         if (bodegaSeleccionada != null) {
             // Llamar al método actualizarVino de la bodega seleccionada
-            bodegaSeleccionada.actualizarVinos();
+            //TODO: Arreglar como se le envia los parametros al metodo actualizar vinos
+            //bodegaSeleccionada.actualizarVinos();
         } else {
             System.out.println("No se encontró la bodega seleccionada.");
         }

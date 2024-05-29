@@ -39,14 +39,16 @@ public class GestorImportarActualizacion {
     }
 
 
-    public String tomarSeleccionDeBodega(String nombreBodegaSeleccionada) {
-        this.nombreBodegaSeleccionada = nombreBodegaSeleccionada;
-        return nombreBodegaSeleccionada;
+    public void tomarSeleccionDeBodega(String bodegaSeleccionada) throws IOException, InterruptedException {
+        this.nombreBodegaSeleccionada = bodegaSeleccionada;
+        obtenerActualizacionesBodega(nombreBodegaSeleccionada);
     }
 
-    public void obtenerActualizacionesBodega(String nombreBodegaSeleccionada) throws IOException, InterruptedException {
+    public void obtenerActualizacionesBodega(String bodegaSeleccionada) throws IOException, InterruptedException {
         //como implementar la llamada a un ENDPOINT
-        String direccion = "http://localhost:8080/actualizaciones";
+
+
+        String direccion = "http://localhost:8080/actualizaciones" + bodegaSeleccionada;
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(direccion))

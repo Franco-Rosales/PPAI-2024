@@ -6,6 +6,8 @@ public class Bodega {
 
     // LOS ATRIBUTOS NO SON DEFINITIVOS SON PARA PROBAR
     private String nombre;
+
+    private
     boolean actualizacionDisponible;
 
     public Bodega(String nombre, boolean actualizacionDisponible) {
@@ -14,6 +16,7 @@ public class Bodega {
     }
 
     public Boolean tieneActualizacion(){
+
        if (actualizacionDisponible){
            return true;
        }

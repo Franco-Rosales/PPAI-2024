@@ -1,5 +1,8 @@
 package Modelos;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -8,6 +11,7 @@ import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 public class GestorImportarActualizacion {
 
@@ -24,6 +28,10 @@ public class GestorImportarActualizacion {
         bodegas.add(new Bodega("Bodega 5"));
     }
 
+
+
+
+    // Empiezan los metodos
     public List<String> opcionActualizarVinos(){
         return buscarBodegaActualizacion();
     }
@@ -45,15 +53,18 @@ public class GestorImportarActualizacion {
     }
 
 
-    public void tomarSeleccionDeBodega(String bodegaSeleccionada) throws IOException, InterruptedException {
+    public void tomarSeleccionDeBodega(String bodegaSeleccionada) {
         this.nombreBodegaSeleccionada = bodegaSeleccionada;
-        obtenerActualizacionesBodega(nombreBodegaSeleccionada);
+        System.out.println("Bodega seleccionada: " + bodegaSeleccionada);
+        try {
+            obtenerActualizacionesBodega(bodegaSeleccionada);
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void obtenerActualizacionesBodega(String bodegaSeleccionada) throws IOException, InterruptedException {
         //como implementar la llamada a un ENDPOINT
-
-
         String direccion = "http://localhost:8080/actualizaciones" + bodegaSeleccionada;
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
@@ -65,38 +76,41 @@ public class GestorImportarActualizacion {
         String respuestaConActualizaciones  = response.body();
         System.out.println(respuestaConActualizaciones);
 
+        List<Vino> actualizaciones = parsearRespuesta(respuestaConActualizaciones);
 
         // Lógica para decidir si crear o actualizar un vino
-        //if (informacion != null && !informacion.isEmpty()) {
-            // Dentro de este if es que se implementa el optional
-            //si es actualizacion llamar al metodo actualizarVinos
-            //si es creacion llamar al metodo crearVinos
-            //gestionBodegas.tomarDecisionCrearActualizarVino(informacion);
-        //} else {
-           // System.out.println("No se pudo obtener información de actualización para la bodega seleccionada.");
-        //}
+        for (Vino vino : actualizaciones) {
+            // TODO: Terminar de definir quien tiene el metodo buscarVinoPorNombre para decifrar si ese vino existe o no para crearlo o actualizarlo
+            Optional<Vino> vinoExistente = buscarVinoPorNombre(vino.getNombre());
+            if (vinoExistente.isPresent()) {
+                actualizarVinos(vino);
+            } else {
+                crearVinos(vino);
+            }
+        }
     }
 
 
-    public void actualizarVinos() {
+    public void actualizarVinos(Vino vino) {
 
-        String nombreBodegaSeleccionada = this.nombreBodegaSeleccionada;
+    }
 
-        // Buscar la bodega seleccionada en la lista de bodegas
-        Bodega bodegaSeleccionada = null;
-        for (Bodega bodega : bodegas) {
-            if (bodega.getNombre().equals(nombreBodegaSeleccionada)) {
-                bodegaSeleccionada = bodega;
-                break;
-            }
-        }
-        // Verificar si se encontró la bodega seleccionada
-        if (bodegaSeleccionada != null) {
-            // Llamar al método actualizarVino de la bodega seleccionada
-            //TODO: Arreglar como se le envia los parametros al metodo actualizar vinos
-            //bodegaSeleccionada.actualizarVinos();
-        } else {
-            System.out.println("No se encontró la bodega seleccionada.");
+    public void crearVinos(Vino vino){
+
+    }
+
+    private List<Vino> parsearRespuesta(String respuestaConActualizaciones) {
+        Gson gson = new Gson();
+        try {
+            // Definir el tipo de la lista de vinos
+            java.lang.reflect.Type tipoListaVinos = new TypeToken<List<Vino>>() {
+            }.getType();
+            // Convertir el JSON en una lista de objetos Vino
+            return gson.fromJson(respuestaConActualizaciones, tipoListaVinos);
+        } catch (Exception e) {
+            e.printStackTrace();
+            // En caso de error, devolver una lista vacía o manejar el error según tus necesidades
+            return List.of();
         }
     }
 

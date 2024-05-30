@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0aa97b36-5718-449b-a4c7-cb25996c14ea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelos/Bodega.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/Bodega.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelos/GestorImportarActualizacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/GestorImportarActualizacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelos/PantallaImportarActualizacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/PantallaImportarActualizacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelos/Vino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/Vino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Principal/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Principal/main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +50,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -79,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716930653946</updated>
-      <workItem from="1716930655357" duration="15058000" />
+      <workItem from="1716930655357" duration="20536000" />
     </task>
     <servers />
   </component>

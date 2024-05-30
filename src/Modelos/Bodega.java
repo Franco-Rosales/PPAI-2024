@@ -1,26 +1,35 @@
 package Modelos;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 public class Bodega {
 
     // LOS ATRIBUTOS NO SON DEFINITIVOS SON PARA PROBAR
     private String nombre;
+    private Date fechaActualizacion;
 
-    private
-    boolean actualizacionDisponible;
+    private Date fechaUltimaActualizacion;
 
-    public Bodega(String nombre, boolean actualizacionDisponible) {
+    private int periodicidadActualizacion;
+
+    public Bodega(String nombre) {
         this.nombre = nombre;
-        this.actualizacionDisponible = actualizacionDisponible;
     }
 
-    public Boolean tieneActualizacion(){
+    public boolean tieneActualizacion(Date fechaActual) {
+        // Sumar la periodicidad a la fecha de la última actualización
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(fechaUltimaActualizacion);
+        cal.add(Calendar.DAY_OF_YEAR, periodicidadActualizacion);
 
-       if (actualizacionDisponible){
-           return true;
-       }
-         return false;
+        // Fecha de la próxima actualización
+        Date fechaProximaActualizacion = cal.getTime();
+
+        // Comparar la fecha actual con la fecha de la próxima actualización
+        return !fechaActual.before(fechaProximaActualizacion);
     }
     public String getNombre(){
         return nombre;

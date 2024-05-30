@@ -6,6 +6,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class GestorImportarActualizacion {
@@ -16,26 +17,31 @@ public class GestorImportarActualizacion {
     public void crearBodegas(){
         this.bodegas = new ArrayList<>();
         // Creación de bodegas hardcodeadas
-        bodegas.add(new Bodega("Bodega 1", true));
-        bodegas.add(new Bodega("Bodega 2", true));
-        bodegas.add(new Bodega("Bodega 3", true));
-        bodegas.add(new Bodega("Bodega 4", true));
-        bodegas.add(new Bodega("Bodega 5", true));
+        bodegas.add(new Bodega("Bodega 1"));
+        bodegas.add(new Bodega("Bodega 2"));
+        bodegas.add(new Bodega("Bodega 3"));
+        bodegas.add(new Bodega("Bodega 4"));
+        bodegas.add(new Bodega("Bodega 5"));
     }
 
     public List<String> opcionActualizarVinos(){
         return buscarBodegaActualizacion();
     }
 
-
-    public List<String> buscarBodegaActualizacion(){
+    public Date obtenerFechaActual(){
+        //retornar la fecha actual
+        return new Date();
+    }
+    public List<String> buscarBodegaActualizacion() {
         List<String> bodegasConActualizacion = new ArrayList<>();
+        Date fechaActual = obtenerFechaActual(); // Obtener la fecha actual
+
         for (Bodega bodega : bodegas) {
-            if (bodega.tieneActualizacion()) {
-                bodegasConActualizacion.add(bodega.getDatos());
+            if (bodega.tieneActualizacion(fechaActual)) { // Preguntar a cada bodega si necesita actualización
+                bodegasConActualizacion.add(bodega.getDatos()); // Agregar bodega a la lista si necesita actualización
             }
         }
-        return bodegasConActualizacion;
+        return bodegasConActualizacion; // Devolver la lista de bodegas que necesitan actualización
     }
 
 

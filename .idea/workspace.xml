@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelos/Bodega.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/Bodega.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelos/GestorImportarActualizacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/GestorImportarActualizacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelos/PantallaImportarActualizacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/PantallaImportarActualizacion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +25,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 7
@@ -80,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716930653946</updated>
-      <workItem from="1716930655357" duration="11134000" />
+      <workItem from="1716930655357" duration="15058000" />
     </task>
     <servers />
   </component>

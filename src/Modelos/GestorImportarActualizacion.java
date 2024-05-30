@@ -3,35 +3,32 @@ package Modelos;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class GestorImportarActualizacion {
 
     // LOS ATRIBUTOS NO SON DEFINITIVOS SON PARA PROBAR
     private List<Bodega> bodegas;
     private String nombreBodegaSeleccionada;
-    public void crearBodegas(){
-        this.bodegas = new ArrayList<>();
-        // Creación de bodegas hardcodeadas
-        bodegas.add(new Bodega("Bodega 1"));
-        bodegas.add(new Bodega("Bodega 2"));
-        bodegas.add(new Bodega("Bodega 3"));
-        bodegas.add(new Bodega("Bodega 4"));
-        bodegas.add(new Bodega("Bodega 5"));
+
+
+
+    public void crearBodegasDesdeJSON(String rutaArchivo) {
+        try (FileReader reader = new FileReader(rutaArchivo)) {
+            Gson gson = new Gson();
+            Bodega[] bodegasArray = gson.fromJson(reader, Bodega[].class);
+            this.bodegas = Arrays.asList(bodegasArray);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-
-
-
-    // Empiezan los metodos
     public List<String> opcionActualizarVinos(){
         return buscarBodegaActualizacion();
     }

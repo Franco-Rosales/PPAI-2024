@@ -1,5 +1,6 @@
 package Principal;
 
+import Modelos.GestorImportarActualizacion;
 import Modelos.PantallaImportarActualizacion;
 
 import javax.swing.*;
@@ -8,6 +9,10 @@ import java.awt.event.ActionListener;
 
 public class main {
     public static void main(String[] args) {
+        GestorImportarActualizacion gestor = new GestorImportarActualizacion();
+        gestor.crearBodegasDesdeJSON("ruta/al/archivo.json");
+
+
         // Crear y configurar la ventana principal
         JFrame frame = new JFrame("Ventana Principal");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

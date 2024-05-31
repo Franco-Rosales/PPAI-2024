@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 public class main {
     public static void main(String[] args) {
         GestorImportarActualizacion gestor = new GestorImportarActualizacion();
-        gestor.crearBodegasDesdeJSON("ruta/al/archivo.json");
+        gestor.crearBodegasDesdeJSON("ApiBodegas/bodegas.json");
 
 
         // Crear y configurar la ventana principal

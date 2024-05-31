@@ -1,6 +1,8 @@
 package Modelos;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonDeserializer;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.FileReader;
@@ -9,6 +11,8 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class GestorImportarActualizacion {
@@ -20,10 +24,23 @@ public class GestorImportarActualizacion {
 
 
     public void crearBodegasDesdeJSON(String rutaArchivo) {
+        System.out.println("Entre al metodo");
         try (FileReader reader = new FileReader(rutaArchivo)) {
-            Gson gson = new Gson();
+            GsonBuilder gsonBuilder = new GsonBuilder();
+            gsonBuilder.registerTypeAdapter(Date.class, (JsonDeserializer<Date>) (jsonElement, type, context) -> {
+                String dateStr = jsonElement.getAsString();
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+                try {
+                    return formatter.parse(dateStr);
+                } catch (ParseException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+            Gson gson = gsonBuilder.create();
             Bodega[] bodegasArray = gson.fromJson(reader, Bodega[].class);
-            this.bodegas = Arrays.asList(bodegasArray);
+            this.bodegas = new ArrayList<>(Arrays.asList(bodegasArray)); // Crear una nueva lista mutable
+            System.out.println(bodegas);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -39,6 +56,7 @@ public class GestorImportarActualizacion {
     }
     public List<String> buscarBodegaActualizacion() {
         List<String> bodegasConActualizacion = new ArrayList<>();
+        
         Date fechaActual = obtenerFechaActual(); // Obtener la fecha actual
 
         for (Bodega bodega : bodegas) {
@@ -76,15 +94,15 @@ public class GestorImportarActualizacion {
         List<Vino> actualizaciones = parsearRespuesta(respuestaConActualizaciones);
 
         // Lógica para decidir si crear o actualizar un vino
-        for (Vino vino : actualizaciones) {
+        // for (Vino vino : actualizaciones) {
             // TODO: Terminar de definir quien tiene el metodo buscarVinoPorNombre para decifrar si ese vino existe o no para crearlo o actualizarlo
-            Optional<Vino> vinoExistente = buscarVinoPorNombre(vino.getNombre());
-            if (vinoExistente.isPresent()) {
-                actualizarVinos(vino);
-            } else {
-                crearVinos(vino);
-            }
-        }
+        //    Optional<Vino> vinoExistente = buscarVinoPorNombre(vino.getNombre());
+        //    if (vinoExistente.isPresent()) {
+        //        actualizarVinos(vino);
+        //    } else {
+        //        crearVinos(vino);
+        //    }
+        // }
     }
 
 

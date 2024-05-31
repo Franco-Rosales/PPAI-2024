@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Bodega {
 
-    // LOS ATRIBUTOS NO SON DEFINITIVOS SON PARA PROBAR
+
     private String nombre;
     private Date fechaUltimaActualizacion;
     private int periodicidadActualizacion;
@@ -45,7 +45,7 @@ public class Bodega {
         return nombre;
     }
     public String getDatos(){
-        return null;
+        return "Nombre " + nombre;
     }
 
     public void actualizarVinos(String bodegaSeleccionada,List<String> actualizaciones){

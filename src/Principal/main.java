@@ -28,6 +28,7 @@ public class main {
         boton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                System.out.println("Ejecute la accion para llamar el metodo tomar opcion");
                 // Llamar al método de la clase Boundary para habilitar la pantalla
                 pantalla.tomarOpcionActualizacionVinos();
             }

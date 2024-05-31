@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0aa97b36-5718-449b-a4c7-cb25996c14ea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PPAI-2024.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PPAI-2024.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiBodegas/bodegas.json" beforeDir="false" afterPath="$PROJECT_DIR$/ApiBodegas/bodegas.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelos/Bodega.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/Bodega.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelos/GestorImportarActualizacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/GestorImportarActualizacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Principal/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Principal/main.java" afterDir="false" />

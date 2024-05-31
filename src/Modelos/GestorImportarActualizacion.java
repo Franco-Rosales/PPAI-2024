@@ -7,6 +7,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -21,32 +22,31 @@ public class GestorImportarActualizacion {
     private List<Bodega> bodegas;
     private String nombreBodegaSeleccionada;
 
+    public GestorImportarActualizacion() {
+        this.bodegas = new ArrayList<>();
+    }
 
 
-    public void crearBodegasDesdeJSON(String rutaArchivo) {
-        System.out.println("Entre al metodo");
-        try (FileReader reader = new FileReader(rutaArchivo)) {
-            GsonBuilder gsonBuilder = new GsonBuilder();
-            gsonBuilder.registerTypeAdapter(Date.class, (JsonDeserializer<Date>) (jsonElement, type, context) -> {
-                String dateStr = jsonElement.getAsString();
-                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
-                try {
-                    return formatter.parse(dateStr);
-                } catch (ParseException e) {
-                    throw new RuntimeException(e);
-                }
-            });
-            Gson gson = gsonBuilder.create();
-            Bodega[] bodegasArray = gson.fromJson(reader, Bodega[].class);
-            this.bodegas = new ArrayList<>(Arrays.asList(bodegasArray)); // Crear una nueva lista mutable
-            System.out.println(bodegas);
 
+    public void crearBodegasDesdeJSON(String filePath) {
+        Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+        try (FileReader reader = new FileReader(filePath)) {
+            Type bodegaListType = new TypeToken<List<Bodega>>(){}.getType();
+            List<Bodega> bodegasFromJson = gson.fromJson(reader, bodegaListType);
+            this.bodegas.addAll(bodegasFromJson);
+            System.out.println("Se han cargado " + bodegasFromJson.size() + " bodegas desde el JSON.");
+            System.out.println("Tamaño de la lista de bodegas después de la carga: " + this.bodegas.size());
+            // Imprimir los nombres de las bodegas para verificar
+            for (Bodega bodega : this.bodegas) {
+                System.out.println(bodega.getNombre());
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public List<String> opcionActualizarVinos(){
+        System.out.println("llegue a la opcoon del gestor");
         return buscarBodegaActualizacion();
     }
 
@@ -55,17 +55,24 @@ public class GestorImportarActualizacion {
         return new Date();
     }
     public List<String> buscarBodegaActualizacion() {
+        System.out.println("Entre a buscar las bodegas");
         List<String> bodegasConActualizacion = new ArrayList<>();
-        
+
         Date fechaActual = obtenerFechaActual(); // Obtener la fecha actual
 
+        System.out.println("Número de bodegas en la lista: " + bodegas.size());
+
         for (Bodega bodega : bodegas) {
+            System.out.println("La bodega a mostrar es: " + bodega.getNombre());
             if (bodega.tieneActualizacion(fechaActual)) { // Preguntar a cada bodega si necesita actualización
                 bodegasConActualizacion.add(bodega.getDatos()); // Agregar bodega a la lista si necesita actualización
             }
         }
+        System.out.println(bodegasConActualizacion);
         return bodegasConActualizacion; // Devolver la lista de bodegas que necesitan actualización
     }
+
+
 
 
     public void tomarSeleccionDeBodega(String bodegaSeleccionada) {

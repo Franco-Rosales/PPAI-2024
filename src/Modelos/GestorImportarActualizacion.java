@@ -89,11 +89,11 @@ public class GestorImportarActualizacion {
 
 
     public void actualizarVinos(Vino vino) {
-
+        //TODO: Implementar la lógica para actualizar un vino
     }
 
     public void crearVinos(Vino vino){
-
+        //TODO: Implementar la lógica para crear un vino
     }
 
     private List<Vino> parsearRespuesta(String respuestaConActualizaciones) {

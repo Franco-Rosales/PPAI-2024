@@ -1,19 +1,29 @@
 package Modelos;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import javax.swing.*;
+import java.util.*;
 
 public class Bodega {
 
-    // LOS ATRIBUTOS NO SON DEFINITIVOS SON PARA PROBAR
+
     private String nombre;
-    private Date fechaActualizacion;
-
     private Date fechaUltimaActualizacion;
-
     private int periodicidadActualizacion;
+    private String descripcion;
+    private List<Double> coordenadasUbicacion;
+    private String historia;
+    private List<Vino> vinos;
+
+
+    public Bodega(String nombre, Date fechaUltimaActualizacion, int periodicidadActualizacion, String descripcion, List<Double> coordenadasUbicacion, String historia) {
+        this.nombre = nombre;
+        this.fechaUltimaActualizacion = fechaUltimaActualizacion;
+        this.periodicidadActualizacion = periodicidadActualizacion;
+        this.descripcion = descripcion;
+        this.coordenadasUbicacion = coordenadasUbicacion;
+        this.historia = historia;
+        this.vinos = new ArrayList<>();
+    }
 
     public Bodega(String nombre) {
         this.nombre = nombre;
@@ -35,7 +45,7 @@ public class Bodega {
         return nombre;
     }
     public String getDatos(){
-        return null;
+        return "Nombre " + nombre;
     }
 
     public void actualizarVinos(String bodegaSeleccionada,List<String> actualizaciones){
@@ -53,4 +63,26 @@ public class Bodega {
     public void crearVinos(String bodegaSeleccionada,List<String> actualizaciones){
 
     }
+
+    @Override
+    public String toString() {
+        StringBuilder coordenadas = new StringBuilder();
+        if (coordenadasUbicacion != null) {
+            for (Double coord : coordenadasUbicacion) {
+                coordenadas.append(coord).append(" ");
+            }
+        }
+
+        return "Bodega{" +
+                "nombre='" + nombre + '\'' +
+                ", fechaUltimaActualizacion=" + fechaUltimaActualizacion +
+                ", periodicidadActualizacion=" + periodicidadActualizacion +
+                ", descripcion='" + descripcion + '\'' +
+                ", coordenadasUbicacion=" + coordenadas +
+                ", historia='" + historia + '\'' +
+                ", vinos=" + vinos +
+                '}';
+    }
+
+
 }

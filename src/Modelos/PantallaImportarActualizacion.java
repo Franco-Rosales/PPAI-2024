@@ -20,9 +20,9 @@ public class PantallaImportarActualizacion {
         this.gestor = new GestorImportarActualizacion();
     }
 
-    public void tomarOpcionActualizacionVinos(){
+    public void tomarOpcionActualizacionVinos(List<Bodega> listaBodegas){
         habilitarPantalla();
-        this.bodegasActualizables = gestor.opcionActualizarVinos();
+        this.bodegasActualizables = gestor.opcionActualizarVinos(listaBodegas);
         mostrarBodegasActualizables(bodegasActualizables);
 
     }

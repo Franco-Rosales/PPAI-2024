@@ -2,7 +2,6 @@ package Modelos;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonDeserializer;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.FileReader;
@@ -12,8 +11,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.util.*;
 
 public class GestorImportarActualizacion {
@@ -26,7 +24,9 @@ public class GestorImportarActualizacion {
         this.bodegas = new ArrayList<>();
     }
 
-
+    public List<Bodega> getBodegas() {
+        return this.bodegas;
+    }
 
     public void crearBodegasDesdeJSON(String filePath) {
         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
@@ -45,24 +45,24 @@ public class GestorImportarActualizacion {
         }
     }
 
-    public List<String> opcionActualizarVinos(){
+    public List<String> opcionActualizarVinos(List<Bodega> listaBodegas){
         System.out.println("llegue a la opcoon del gestor");
-        return buscarBodegaActualizacion();
+        return buscarBodegaActualizacion(listaBodegas);
     }
 
     public Date obtenerFechaActual(){
         //retornar la fecha actual
         return new Date();
     }
-    public List<String> buscarBodegaActualizacion() {
+    public List<String> buscarBodegaActualizacion(List<Bodega> listaBodegas) {
         System.out.println("Entre a buscar las bodegas");
         List<String> bodegasConActualizacion = new ArrayList<>();
 
         Date fechaActual = obtenerFechaActual(); // Obtener la fecha actual
 
-        System.out.println("Número de bodegas en la lista: " + bodegas.size());
+        System.out.println("Número de bodegas en la lista: " + listaBodegas);
 
-        for (Bodega bodega : bodegas) {
+        for (Bodega bodega : listaBodegas) {
             System.out.println("La bodega a mostrar es: " + bodega.getNombre());
             if (bodega.tieneActualizacion(fechaActual)) { // Preguntar a cada bodega si necesita actualización
                 bodegasConActualizacion.add(bodega.getDatos()); // Agregar bodega a la lista si necesita actualización

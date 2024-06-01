@@ -1,11 +1,13 @@
 package Principal;
 
+import Modelos.Bodega;
 import Modelos.GestorImportarActualizacion;
 import Modelos.PantallaImportarActualizacion;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class main {
     public static void main(String[] args) {
@@ -24,13 +26,16 @@ public class main {
         // Crear una instancia de Boundary
         PantallaImportarActualizacion pantalla = new PantallaImportarActualizacion();
 
+        // Crear la lista de TODAS las bodegas
+        List<Bodega> listaBodegas = gestor.getBodegas();
+
         // Agregar ActionListener al botón
         boton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Ejecute la accion para llamar el metodo tomar opcion");
                 // Llamar al método de la clase Boundary para habilitar la pantalla
-                pantalla.tomarOpcionActualizacionVinos();
+                pantalla.tomarOpcionActualizacionVinos(listaBodegas);
             }
         });
 

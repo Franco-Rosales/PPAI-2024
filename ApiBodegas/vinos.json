@@ -1,0 +1,98 @@
+[
+    {
+        "nombre": "Malbec de Catena Zapata",
+        "imagenEtiqueta": "https://example.com/images/catena_zapata_malbec.jpg",
+        "notaCataBodega": 4.8,
+        "precioARS": 1200.50
+    },
+    {
+        "nombre": "Chardonnay de Salentein",
+        "imagenEtiqueta": "https://example.com/images/salentein_chardonnay.jpg",
+        "notaCataBodega": 4.5,
+        "precioARS": 950.00
+    },
+    {
+        "nombre": "Norton Espumoso",
+        "imagenEtiqueta": "https://example.com/images/norton_espumoso.jpg",
+        "notaCataBodega": 4.3,
+        "precioARS": 1150.75
+    },
+    {
+        "nombre": "Luigi Bosca Cabernet Sauvignon",
+        "imagenEtiqueta": "https://example.com/images/luigi_bosca_cabernet.jpg",
+        "notaCataBodega": 4.7,
+        "precioARS": 1350.00
+    },
+    {
+        "nombre": "Trapiche Reserva",
+        "imagenEtiqueta": "https://example.com/images/trapiche_reserva.jpg",
+        "notaCataBodega": 4.6,
+        "precioARS": 1100.30
+    },
+    {
+        "nombre": "Zuccardi Malbec",
+        "imagenEtiqueta": "https://example.com/images/zuccardi_malbec.jpg",
+        "notaCataBodega": 4.9,
+        "precioARS": 1400.00
+    },
+    {
+        "nombre": "Ruca Malen Pinot Noir",
+        "imagenEtiqueta": "https://example.com/images/ruca_malen_pinot_noir.jpg",
+        "notaCataBodega": 4.4,
+        "precioARS": 1300.20
+    },
+    {
+        "nombre": "Achaval Ferrer Malbec",
+        "imagenEtiqueta": "https://example.com/images/achaval_ferrer_malbec.jpg",
+        "notaCataBodega": 4.8,
+        "precioARS": 1500.00
+    },
+    {
+        "nombre": "Terrazas de los Andes Torrontés",
+        "imagenEtiqueta": "https://example.com/images/terrazas_andes_torrontes.jpg",
+        "notaCataBodega": 4.5,
+        "precioARS": 1050.60
+    },
+    {
+        "nombre": "Séptima Syrah",
+        "imagenEtiqueta": "https://example.com/images/septima_syrah.jpg",
+        "notaCataBodega": 4.6,
+        "precioARS": 1250.00
+    },
+    {
+        "nombre": "Andeluna Altitud",
+        "imagenEtiqueta": "https://example.com/images/andeluna_altitud.jpg",
+        "notaCataBodega": 4.7,
+        "precioARS": 1450.90
+    },
+    {
+        "nombre": "Viña Cobos Bramare",
+        "imagenEtiqueta": "https://example.com/images/vina_cobos_bramare.jpg",
+        "notaCataBodega": 4.9,
+        "precioARS": 1600.00
+    },
+    {
+        "nombre": "Vistalba Corte A",
+        "imagenEtiqueta": "https://example.com/images/vistalba_corte_a.jpg",
+        "notaCataBodega": 4.7,
+        "precioARS": 1500.00
+    },
+    {
+        "nombre": "Rutini Apartado",
+        "imagenEtiqueta": "https://example.com/images/rutini_apartado.jpg",
+        "notaCataBodega": 4.8,
+        "precioARS": 1700.00
+    },
+    {
+        "nombre": "El Enemigo Bonarda",
+        "imagenEtiqueta": "https://example.com/images/el_enemigo_bonarda.jpg",
+        "notaCataBodega": 4.6,
+        "precioARS": 1350.00
+    },
+    {
+        "nombre": "Finca La Anita Syrah",
+        "imagenEtiqueta": "https://example.com/images/finca_anita_syrah.jpg",
+        "notaCataBodega": 4.5,
+        "precioARS": 1200.00
+    }
+]

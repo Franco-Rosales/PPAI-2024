@@ -45,8 +45,13 @@ public class Bodega {
         return nombre;
     }
     public String getDatos(){
-        return "Nombre " + nombre;
+        return  nombre;
     }
+    public  List<Vino> getVinos(){
+        return vinos;
+    }
+
+
 
     public void actualizarVinos(String bodegaSeleccionada,List<String> actualizaciones){
         //primero pregunta si el vino ya existe en la bodega y si existe lo actualiza y si no existe lo crea con los datos

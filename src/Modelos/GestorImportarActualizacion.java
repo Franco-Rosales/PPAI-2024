@@ -8,10 +8,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.net.URI;
+import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public class GestorImportarActualizacion {
@@ -34,19 +36,13 @@ public class GestorImportarActualizacion {
             Type bodegaListType = new TypeToken<List<Bodega>>(){}.getType();
             List<Bodega> bodegasFromJson = gson.fromJson(reader, bodegaListType);
             this.bodegas.addAll(bodegasFromJson);
-            System.out.println("Se han cargado " + bodegasFromJson.size() + " bodegas desde el JSON.");
-            System.out.println("Tamaño de la lista de bodegas después de la carga: " + this.bodegas.size());
             // Imprimir los nombres de las bodegas para verificar
-            for (Bodega bodega : this.bodegas) {
-                System.out.println(bodega.getNombre());
-            }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public List<String> opcionActualizarVinos(List<Bodega> listaBodegas){
-        System.out.println("llegue a la opcoon del gestor");
         return buscarBodegaActualizacion(listaBodegas);
     }
 
@@ -60,15 +56,11 @@ public class GestorImportarActualizacion {
 
         Date fechaActual = obtenerFechaActual(); // Obtener la fecha actual
 
-        System.out.println("Número de bodegas en la lista: " + listaBodegas);
-
         for (Bodega bodega : listaBodegas) {
-            System.out.println("La bodega a mostrar es: " + bodega.getNombre());
             if (bodega.tieneActualizacion(fechaActual)) { // Preguntar a cada bodega si necesita actualización
                 bodegasConActualizacion.add(bodega.getDatos()); // Agregar bodega a la lista si necesita actualización
             }
         }
-        System.out.println(bodegasConActualizacion);
         return bodegasConActualizacion; // Devolver la lista de bodegas que necesitan actualización
     }
 
@@ -86,54 +78,83 @@ public class GestorImportarActualizacion {
     }
 
     public void obtenerActualizacionesBodega(String bodegaSeleccionada) throws IOException, InterruptedException {
-        //como implementar la llamada a un ENDPOINT
-        String direccion = "http://localhost:8080/actualizaciones" + bodegaSeleccionada;
+        // Construir la dirección del endpoint con el nombre de la bodega seleccionada
+        String direccion = "http://localhost:8080/actualizaciones/" + URLEncoder.encode(bodegaSeleccionada, StandardCharsets.UTF_8.toString());
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(direccion))
                 .build();
-        HttpResponse<String> response = client.send(request,
-                HttpResponse.BodyHandlers.ofString());
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-        String respuestaConActualizaciones  = response.body();
+        // Obtener la respuesta y parsearla a una lista de vinos
+        String respuestaConActualizaciones = response.body();
         System.out.println(respuestaConActualizaciones);
 
         List<Vino> actualizaciones = parsearRespuesta(respuestaConActualizaciones);
 
+        // Lista para almacenar vinos actualizados o creados
+        List<Vino> vinosProcesados = new ArrayList<>();
+
         // Lógica para decidir si crear o actualizar un vino
-        // for (Vino vino : actualizaciones) {
-            // TODO: Terminar de definir quien tiene el metodo buscarVinoPorNombre para decifrar si ese vino existe o no para crearlo o actualizarlo
-        //    Optional<Vino> vinoExistente = buscarVinoPorNombre(vino.getNombre());
-        //    if (vinoExistente.isPresent()) {
-        //        actualizarVinos(vino);
-        //    } else {
-        //        crearVinos(vino);
-        //    }
-        // }
+        for (Vino vino : actualizaciones) {
+            Optional<Vino> vinoExistente = buscarVinoPorNombre(vino.getNombre(), bodegaSeleccionada);
+            if (vinoExistente.isPresent()) {
+                actualizarVinos(vinoExistente.get(), vino);
+                vinosProcesados.add(vinoExistente.get());
+            } else {
+                crearVinos(vino, bodegaSeleccionada);
+                vinosProcesados.add(vino);
+            }
+        }
     }
 
 
-    public void actualizarVinos(Vino vino) {
-        //TODO: Implementar la lógica para actualizar un vino
+    private void actualizarVinos(Vino vinoExistente, Vino vinoActualizado) {
+        // Actualizar los campos del vino existente con los datos del vino actualizado
+        //vinoExistente.setPrecio(vinoActualizado.getPrecio());
+        //vinoExistente.setCantidad(vinoActualizado.getCantidad());
+        // Actualizar otros campos según sea necesario
+        System.out.println("Vino actualizado: " + vinoExistente.getNombre());
     }
 
-    public void crearVinos(Vino vino){
-        //TODO: Implementar la lógica para crear un vino
+    private void crearVinos(Vino vino, String bodegaSeleccionada) {
+        // Agregar el nuevo vino a la bodega correspondiente
+        for (Bodega bodega : bodegas) {
+            if (bodega.getNombre().equals(bodegaSeleccionada)) {
+                bodega.getVinos().add(vino);
+                System.out.println("Vino creado: " + vino.getNombre());
+                return;
+            }
+        }
     }
 
     private List<Vino> parsearRespuesta(String respuestaConActualizaciones) {
         Gson gson = new Gson();
         try {
-            // Definir el tipo de la lista de vinos
-            java.lang.reflect.Type tipoListaVinos = new TypeToken<List<Vino>>() {
-            }.getType();
-            // Convertir el JSON en una lista de objetos Vino
+            Type tipoListaVinos = new TypeToken<List<Vino>>() {}.getType();
             return gson.fromJson(respuestaConActualizaciones, tipoListaVinos);
         } catch (Exception e) {
             e.printStackTrace();
-            // En caso de error, devolver una lista vacía o manejar el error según tus necesidades
             return List.of();
         }
     }
+
+    private Optional<Vino> buscarVinoPorNombre(String nombreVino, String bodegaSeleccionada) {
+        // Buscar el vino por nombre dentro de la bodega seleccionada
+        for (Bodega bodega : bodegas) {
+            if (bodega.getNombre().equals(bodegaSeleccionada)) {
+                List<Vino> vinos = bodega.getVinos();
+                if (vinos != null) {
+                    for (Vino vino : vinos) {
+                        if (vino.getNombre().equalsIgnoreCase(nombreVino)) {
+                            return Optional.of(vino);
+                        }
+                    }
+                }
+            }
+        }
+        return Optional.empty();
+    }
+
 
 }

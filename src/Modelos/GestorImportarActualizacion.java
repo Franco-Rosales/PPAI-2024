@@ -18,7 +18,7 @@ import java.util.*;
 
 public class GestorImportarActualizacion {
 
-    // LOS ATRIBUTOS NO SON DEFINITIVOS SON PARA PROBAR
+
     private List<Bodega> bodegas;
     private String nombreBodegaSeleccionada;
 
@@ -36,7 +36,14 @@ public class GestorImportarActualizacion {
             Type bodegaListType = new TypeToken<List<Bodega>>(){}.getType();
             List<Bodega> bodegasFromJson = gson.fromJson(reader, bodegaListType);
             this.bodegas.addAll(bodegasFromJson);
+
             // Imprimir los nombres de las bodegas para verificar
+            for (Bodega bodega : bodegasFromJson) {
+                System.out.println("Bodega: " + bodega.getDatos());
+                for (Vino vino : bodega.getVinos()) {
+                    System.out.println("  Vino: " + vino.getNombre());
+                }
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -120,7 +127,7 @@ public class GestorImportarActualizacion {
     private void crearVinos(Vino vino, String bodegaSeleccionada) {
         // Agregar el nuevo vino a la bodega correspondiente
         for (Bodega bodega : bodegas) {
-            if (bodega.getNombre().equals(bodegaSeleccionada)) {
+            if (bodega.getDatos().equals(bodegaSeleccionada)) {
                 bodega.getVinos().add(vino);
                 System.out.println("Vino creado: " + vino.getNombre());
                 return;
@@ -142,7 +149,7 @@ public class GestorImportarActualizacion {
     private Optional<Vino> buscarVinoPorNombre(String nombreVino, String bodegaSeleccionada) {
         // Buscar el vino por nombre dentro de la bodega seleccionada
         for (Bodega bodega : bodegas) {
-            if (bodega.getNombre().equals(bodegaSeleccionada)) {
+            if (bodega.getDatos().equals(bodegaSeleccionada)) {
                 List<Vino> vinos = bodega.getVinos();
                 if (vinos != null) {
                     for (Vino vino : vinos) {

@@ -22,12 +22,9 @@ public class Bodega {
         this.descripcion = descripcion;
         this.coordenadasUbicacion = coordenadasUbicacion;
         this.historia = historia;
-        this.vinos = new ArrayList<>();
+        this.vinos = vinos != null ? vinos : new ArrayList<>();
     }
 
-    public Bodega(String nombre) {
-        this.nombre = nombre;
-    }
 
     public boolean tieneActualizacion(Date fechaActual) {
         // Sumar la periodicidad a la fecha de la última actualización
@@ -41,9 +38,7 @@ public class Bodega {
         // Comparar la fecha actual con la fecha de la próxima actualización
         return !fechaActual.before(fechaProximaActualizacion);
     }
-    public String getNombre(){
-        return nombre;
-    }
+
     public String getDatos(){
         return  nombre;
     }
@@ -51,42 +46,8 @@ public class Bodega {
         return vinos;
     }
 
-
-
-    public void actualizarVinos(String bodegaSeleccionada,List<String> actualizaciones){
-        //primero pregunta si el vino ya existe en la bodega y si existe lo actualiza y si no existe lo crea con los datos
-            Vino vinoActualizable = new Vino();
-            if(vinoActualizable.sosActualizable()){
-                vinoActualizable.setImagenEtiqueta();
-                vinoActualizable.setPrecioARS();
-                vinoActualizable.setNotaDeCataBodega();
-
-
-        }
-    }
-
-    public void crearVinos(String bodegaSeleccionada,List<String> actualizaciones){
-
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder coordenadas = new StringBuilder();
-        if (coordenadasUbicacion != null) {
-            for (Double coord : coordenadasUbicacion) {
-                coordenadas.append(coord).append(" ");
-            }
-        }
-
-        return "Bodega{" +
-                "nombre='" + nombre + '\'' +
-                ", fechaUltimaActualizacion=" + fechaUltimaActualizacion +
-                ", periodicidadActualizacion=" + periodicidadActualizacion +
-                ", descripcion='" + descripcion + '\'' +
-                ", coordenadasUbicacion=" + coordenadas +
-                ", historia='" + historia + '\'' +
-                ", vinos=" + vinos +
-                '}';
+    public void agregarVino(Vino vino) {
+        this.vinos.add(vino);
     }
 
 

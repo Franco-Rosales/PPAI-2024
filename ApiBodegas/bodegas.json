@@ -34,7 +34,7 @@
         "descripcion": "Bodega especializada en vinos blancos y rosados.",
         "coordenadasUbicacion": [34.0522, -118.2437],
         "historia": "Con más de 50 años de historia, Bodega Salentein es reconocida por sus técnicas innovadoras de vinificación.",
-        "vino": [
+        "vinos": [
             {
                 "nombre": "Chardonnay de Salentein",
                 "imagenEtiqueta": "https://example.com/images/salentein_chardonnay.jpg",

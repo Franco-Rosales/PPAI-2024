@@ -19,15 +19,15 @@ import java.util.*;
 public class GestorImportarActualizacion {
 
 
-    private List<Bodega> bodegas;
+    private List<Bodega> Listabodegas;
     private String nombreBodegaSeleccionada;
 
     public GestorImportarActualizacion() {
-        this.bodegas = new ArrayList<>();
+        this.Listabodegas = new ArrayList<>();
     }
 
     public List<Bodega> getBodegas() {
-        return this.bodegas;
+        return this.Listabodegas;
     }
 
     public void crearBodegasDesdeJSON(String filePath) {
@@ -35,19 +35,29 @@ public class GestorImportarActualizacion {
         try (FileReader reader = new FileReader(filePath)) {
             Type bodegaListType = new TypeToken<List<Bodega>>(){}.getType();
             List<Bodega> bodegasFromJson = gson.fromJson(reader, bodegaListType);
-            this.bodegas.addAll(bodegasFromJson);
 
-            // Imprimir los nombres de las bodegas para verificar
             for (Bodega bodega : bodegasFromJson) {
+                // Imprimir el nombre de la bodega
                 System.out.println("Bodega: " + bodega.getDatos());
+
+                // Imprimir los nombres de los vinos de la bodega
+                System.out.println("Vinos de la bodega:");
                 for (Vino vino : bodega.getVinos()) {
-                    System.out.println("  Vino: " + vino.getNombre());
+                    System.out.println("- " + vino.getNombre());
                 }
+
+                // Agregar la bodega a la lista de bodegas
+                Listabodegas.add(bodega);
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
+
+
 
     public List<String> opcionActualizarVinos(List<Bodega> listaBodegas){
         return buscarBodegaActualizacion(listaBodegas);
@@ -126,7 +136,7 @@ public class GestorImportarActualizacion {
 
     private void crearVinos(Vino vino, String bodegaSeleccionada) {
         // Agregar el nuevo vino a la bodega correspondiente
-        for (Bodega bodega : bodegas) {
+        for (Bodega bodega : Listabodegas) {
             if (bodega.getDatos().equals(bodegaSeleccionada)) {
                 bodega.getVinos().add(vino);
                 System.out.println("Vino creado: " + vino.getNombre());
@@ -148,7 +158,7 @@ public class GestorImportarActualizacion {
 
     private Optional<Vino> buscarVinoPorNombre(String nombreVino, String bodegaSeleccionada) {
         // Buscar el vino por nombre dentro de la bodega seleccionada
-        for (Bodega bodega : bodegas) {
+        for (Bodega bodega : Listabodegas) {
             if (bodega.getDatos().equals(bodegaSeleccionada)) {
                 List<Vino> vinos = bodega.getVinos();
                 if (vinos != null) {

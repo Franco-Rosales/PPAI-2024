@@ -22,7 +22,7 @@ public class Bodega {
         this.descripcion = descripcion;
         this.coordenadasUbicacion = coordenadasUbicacion;
         this.historia = historia;
-        this.vinos = vinos != null ? vinos : new ArrayList<>();
+        this.vinos = new ArrayList<>();
     }
 
 
@@ -45,9 +45,16 @@ public class Bodega {
     public  List<Vino> getVinos(){
         return vinos;
     }
+    public void setVinos(List<Vino> vinos) {
+        this.vinos = vinos;
+    }
 
-    public void agregarVino(Vino vino) {
-        this.vinos.add(vino);
+
+    public void addVino(Vino vino) {
+        if (vinos == null) {
+            vinos = new ArrayList<>();
+        }
+        vinos.add(vino);
     }
 
 

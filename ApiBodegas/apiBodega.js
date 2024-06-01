@@ -24,7 +24,8 @@ const Bodegas = sequelize.define('Bodegas', {
     periodicidadActualizacion: {type: DataTypes.INTEGER},
     descripcion: {type: DataTypes.STRING},
     coordenadasUbicacion: {type: DataTypes.JSON},
-    historia: {type: DataTypes.STRING}
+    historia: {type: DataTypes.STRING},
+    vinos: {type: DataTypes.JSON}
     },
 { timestamps: false });
 

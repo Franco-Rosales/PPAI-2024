@@ -6,7 +6,7 @@
         "descripcion": "Bodega dedicada a la producción de vinos tintos.",
         "coordenadasUbicacion": [40.7128, -74.0060],
         "historia": "Fundada en 1920, esta bodega ha sido pionera en la producción de vinos orgánicos.",
-        "vino": [
+        "vinos": [
             {
                 "nombre": "Malbec de Catena Zapata",
                 "imagenEtiqueta": "https://example.com/images/catena_zapata_malbec.jpg",
@@ -62,7 +62,7 @@
         "descripcion": "Bodega con una amplia gama de vinos espumosos.",
         "coordenadasUbicacion": [41.9028, 12.4964],
         "historia": "Establecida en 1880, Bodega Norton ha ganado numerosos premios internacionales por sus vinos de alta calidad.",
-        "vino": [
+        "vinos": [
             {
                 "nombre": "Norton Espumoso",
                 "imagenEtiqueta": "https://example.com/images/norton_espumoso.jpg",
@@ -90,7 +90,7 @@
         "descripcion": "Bodega histórica con una rica tradición en la producción de vinos finos.",
         "coordenadasUbicacion": [38.7223, -9.1393],
         "historia": "Desde 1901, Bodega Luigi Bosca ha sido un referente en la industria vitivinícola argentina.",
-        "vino": [
+        "vinos": [
             {
                 "nombre": "Luigi Bosca Cabernet Sauvignon",
                 "imagenEtiqueta": "https://example.com/images/luigi_bosca_cabernet.jpg",
@@ -118,7 +118,7 @@
         "descripcion": "Una de las bodegas más importantes de Argentina, conocida por su innovación.",
         "coordenadasUbicacion": [51.5074, -0.1278],
         "historia": "Bodega Trapiche, fundada en 1883, ha sido pionera en la exportación de vinos argentinos.",
-        "vino": [
+        "vinos": [
             {
                 "nombre": "Trapiche Reserva",
                 "imagenEtiqueta": "https://example.com/images/trapiche_reserva.jpg",
@@ -146,7 +146,7 @@
         "descripcion": "Bodega familiar que se destaca por su enfoque en la sostenibilidad.",
         "coordenadasUbicacion": [48.8566, 2.3522],
         "historia": "Bodega Zuccardi ha sido reconocida globalmente por su compromiso con la sostenibilidad y la calidad.",
-        "vino": [
+        "vinos": [
             {
                 "nombre": "Zuccardi Malbec",
                 "imagenEtiqueta": "https://example.com/images/zuccardi_malbec.jpg",
@@ -174,7 +174,7 @@
         "descripcion": "Bodega boutique que ofrece una experiencia única de maridaje.",
         "coordenadasUbicacion": [35.6895, 139.6917],
         "historia": "Desde 1998, Bodega Ruca Malen ha sido conocida por su enfoque en la creación de experiencias enoturísticas.",
-        "vino": [
+        "vinos": [
             {
                 "nombre": "Ruca Malen Pinot Noir",
                 "imagenEtiqueta": "https://example.com/images/ruca_malen_pinot_noir.jpg",
@@ -202,7 +202,7 @@
         "descripcion": "Bodega reconocida por la alta calidad de sus Malbec.",
         "coordenadasUbicacion": [40.7306, -73.9352],
         "historia": "Bodega Achaval Ferrer, fundada en 1998, ha ganado numerosos premios por sus vinos de alta gama.",
-        "vino": [
+        "vinos": [
             {
                 "nombre": "Achaval Ferrer Malbec",
                 "imagenEtiqueta": "https://example.com/images/achaval_ferrer_malbec.jpg",
@@ -230,7 +230,7 @@
         "descripcion": "Bodega que produce vinos en terrazas a diferentes altitudes.",
         "coordenadasUbicacion": [37.7749, -122.4194],
         "historia": "Con más de 20 años de historia, Bodega Terrazas de los Andes se ha destacado por sus vinos de altura.",
-        "vino": [
+        "vinos": [
             {
                 "nombre": "Terrazas de los Andes Torrontés",
                 "imagenEtiqueta": "https://example.com/images/terrazas_andes_torrontes.jpg",
@@ -258,7 +258,7 @@
         "descripcion": "Bodega moderna con una arquitectura impresionante.",
         "coordenadasUbicacion": [34.0522, -118.2437],
         "historia": "Bodega Séptima, parte del grupo Codorníu, se destaca por su diseño arquitectónico y sus vinos de calidad.",
-        "vino": [
+        "vinos": [
             {
                 "nombre": "Séptima Syrah",
                 "imagenEtiqueta": "https://example.com/images/septima_syrah.jpg",
@@ -286,7 +286,7 @@
         "descripcion": "Bodega situada en los Andes con vinos elegantes.",
         "coordenadasUbicacion": [51.1657, 10.4515],
         "historia": "Desde 2003, Bodega Andeluna ha sido sinónimo de elegancia y calidad en la región de Mendoza.",
-        "vino": [
+        "vinos": [
             {
                 "nombre": "Andeluna Altitud",
                 "imagenEtiqueta": "https://example.com/images/andeluna_altitud.jpg",
@@ -314,7 +314,7 @@
         "descripcion": "Bodega de autor que produce vinos premium.",
         "coordenadasUbicacion": [34.0007, -81.0348],
         "historia": "Fundada por el enólogo estadounidense Paul Hobbs en 1998, Viña Cobos se destaca por sus vinos de alta gama.",
-        "vino": [
+        "vinos": [
             {
                 "nombre": "Viña Cobos Felino Malbec",
                 "imagenEtiqueta": "https://example.com/images/vina_cobos_felino_malbec.jpg",

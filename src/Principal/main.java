@@ -12,7 +12,7 @@ import java.util.List;
 public class main {
     public static void main(String[] args) {
         GestorImportarActualizacion gestor = new GestorImportarActualizacion();
-        gestor.crearBodegasDesdeJSON("ApiBodegas/bodegas.json");
+        gestor.crearBodegasDesdeJSON("C:\\Users\\PC\\OneDrive\\Escritorio\\DSI_PPAI_2024\\2\\PPAI-2024\\ApiBodegas\\bodegas.json");
 
 
         // Crear y configurar la ventana principal

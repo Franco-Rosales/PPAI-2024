@@ -23,7 +23,7 @@ public class PantallaImportarActualizacion {
     public void tomarOpcionActualizacionVinos(List<Bodega> listaBodegas){
         habilitarPantalla();
         this.bodegasActualizables = gestor.opcionActualizarVinos(listaBodegas);
-        mostrarBodegasActualizables(bodegasActualizables);
+        mostrarBodegasActualizables(bodegasActualizables, listaBodegas);
 
     }
 
@@ -44,7 +44,7 @@ public class PantallaImportarActualizacion {
         nuevaVentana.setVisible(true);
     }
 
-    public void mostrarBodegasActualizables(List<String> bodegasActualizables) {
+    public void mostrarBodegasActualizables(List<String> bodegasActualizables, List<Bodega> listaTodasBodegas) {
         // Convertir la lista a un array para el JList
         DefaultListModel<String> listModel = new DefaultListModel<>();
         for (String bodega : bodegasActualizables) {
@@ -59,7 +59,7 @@ public class PantallaImportarActualizacion {
             public void actionPerformed(ActionEvent e) {
                 try {
 
-                    tomarSeleccionBodegaActualizar();
+                    tomarSeleccionBodegaActualizar(listaTodasBodegas);
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 } catch (InterruptedException ex) {
@@ -76,11 +76,11 @@ public class PantallaImportarActualizacion {
 
     }
 
-    public void tomarSeleccionBodegaActualizar() throws IOException, InterruptedException {
+    public void tomarSeleccionBodegaActualizar(List<Bodega> listaTodasBodegas) throws IOException, InterruptedException {
         String bodegaSeleccionada = listaBodegas.getSelectedValue();
         if (bodegaSeleccionada != null) {
             // Llamar al método del controlador con la bodega seleccionada
-            gestor.tomarSeleccionDeBodega(bodegaSeleccionada);
+            gestor.tomarSeleccionDeBodega(bodegaSeleccionada, listaTodasBodegas);
         } else {
             JOptionPane.showMessageDialog(null, "Por favor, seleccione una bodega.");
         }

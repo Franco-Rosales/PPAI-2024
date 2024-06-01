@@ -84,19 +84,20 @@ public class GestorImportarActualizacion {
 
 
 
-    public void tomarSeleccionDeBodega(String bodegaSeleccionada) {
+    public void tomarSeleccionDeBodega(String bodegaSeleccionada, List<Bodega> listaBodegas) {
         this.nombreBodegaSeleccionada = bodegaSeleccionada;
         System.out.println("Bodega seleccionada: " + bodegaSeleccionada);
         try {
-            obtenerActualizacionesBodega(bodegaSeleccionada);
+            obtenerActualizacionesBodega(bodegaSeleccionada, listaBodegas);
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    public void obtenerActualizacionesBodega(String bodegaSeleccionada) throws IOException, InterruptedException {
+    public void obtenerActualizacionesBodega(String bodegaSeleccionada, List<Bodega> listaBodegas) throws IOException, InterruptedException {
         // Construir la dirección del endpoint con el nombre de la bodega seleccionada
-        String direccion = "http://localhost:8080/actualizaciones/" + URLEncoder.encode(bodegaSeleccionada, StandardCharsets.UTF_8.toString());
+        String direccion = "http://localhost:3000/vinos";
+                //+ URLEncoder.encode(bodegaSeleccionada, StandardCharsets.UTF_8.toString());
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(direccion))
@@ -112,9 +113,10 @@ public class GestorImportarActualizacion {
         // Lista para almacenar vinos actualizados o creados
         List<Vino> vinosProcesados = new ArrayList<>();
 
+
         // Lógica para decidir si crear o actualizar un vino
         for (Vino vino : actualizaciones) {
-            Optional<Vino> vinoExistente = buscarVinoPorNombre(vino.getNombre(), bodegaSeleccionada);
+            Optional<Vino> vinoExistente = buscarVinoPorNombre(vino.getNombre(), bodegaSeleccionada, listaBodegas);
             if (vinoExistente.isPresent()) {
                 actualizarVinos(vinoExistente.get(), vino);
                 vinosProcesados.add(vinoExistente.get());
@@ -139,10 +141,11 @@ public class GestorImportarActualizacion {
         for (Bodega bodega : Listabodegas) {
             if (bodega.getDatos().equals(bodegaSeleccionada)) {
                 bodega.getVinos().add(vino);
-                System.out.println("Vino creado: " + vino.getNombre());
+
                 return;
             }
         }
+        System.out.println("Vino creado: " + vino.getNombre());
     }
 
     private List<Vino> parsearRespuesta(String respuestaConActualizaciones) {
@@ -156,9 +159,10 @@ public class GestorImportarActualizacion {
         }
     }
 
-    private Optional<Vino> buscarVinoPorNombre(String nombreVino, String bodegaSeleccionada) {
+    private Optional<Vino> buscarVinoPorNombre(String nombreVino, String bodegaSeleccionada, List<Bodega> listabodegas) {
         // Buscar el vino por nombre dentro de la bodega seleccionada
-        for (Bodega bodega : Listabodegas) {
+
+        for (Bodega bodega : listabodegas) {
             if (bodega.getDatos().equals(bodegaSeleccionada)) {
                 List<Vino> vinos = bodega.getVinos();
                 if (vinos != null) {

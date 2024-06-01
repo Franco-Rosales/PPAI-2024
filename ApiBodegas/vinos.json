@@ -72,7 +72,7 @@
         }
     },
     {
-        "nombre": "Trapiche Reserva",
+        "nombre": "Malbec de Bodega Norton",
         "imagenEtiqueta": "https://example.com/images/trapiche_reserva.jpg",
         "notaCataBodega": 4.6,
         "precioARS": 1100.30,
@@ -89,4 +89,5 @@
             }
         }
     }
+
 ]

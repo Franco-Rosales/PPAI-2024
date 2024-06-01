@@ -8,7 +8,7 @@
         "historia": "Fundada en 1920, esta bodega ha sido pionera en la producción de vinos orgánicos.",
         "vinos": [
             {
-                "nombre": "Malbec de Catena Zapata",
+                "nombre": "Malbec de Bodega Norton",
                 "imagenEtiqueta": "https://example.com/images/catena_zapata_malbec.jpg",
                 "notaCataBodega": 4.8,
                 "precioARS": 1200.50
@@ -64,7 +64,7 @@
         "historia": "Establecida en 1880, Bodega Norton ha ganado numerosos premios internacionales por sus vinos de alta calidad.",
         "vinos": [
             {
-                "nombre": "Norton Espumoso",
+                "nombre": "Malbec de Bodega Norton",
                 "imagenEtiqueta": "https://example.com/images/norton_espumoso.jpg",
                 "notaCataBodega": 4.3,
                 "precioARS": 1150.75

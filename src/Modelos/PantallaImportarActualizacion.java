@@ -58,6 +58,7 @@ public class PantallaImportarActualizacion {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
+
                     tomarSeleccionBodegaActualizar();
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);

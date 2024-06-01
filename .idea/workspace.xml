@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0aa97b36-5718-449b-a4c7-cb25996c14ea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
       <change beforePath="$PROJECT_DIR$/ApiBodegas/bodegas.json" beforeDir="false" afterPath="$PROJECT_DIR$/ApiBodegas/bodegas.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelos/Bodega.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/Bodega.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelos/GestorImportarActualizacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/GestorImportarActualizacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelos/PantallaImportarActualizacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/PantallaImportarActualizacion.java" afterDir="false" />
+>>>>>>> 4d3be4cb2b4c308657e845d9a34ba184886ace04
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +43,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -97,6 +101,7 @@
       <updated>1716930653946</updated>
       <workItem from="1716930655357" duration="22276000" />
       <workItem from="1717179549845" duration="2919000" />
+      <workItem from="1717267110269" duration="1281000" />
     </task>
     <servers />
   </component>

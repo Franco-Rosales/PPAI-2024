@@ -25,9 +25,6 @@ public class Bodega {
         this.vinos = new ArrayList<>();
     }
 
-    public Bodega(String nombre) {
-        this.nombre = nombre;
-    }
 
     public boolean tieneActualizacion(Date fechaActual) {
         // Sumar la periodicidad a la fecha de la última actualización
@@ -41,47 +38,23 @@ public class Bodega {
         // Comparar la fecha actual con la fecha de la próxima actualización
         return !fechaActual.before(fechaProximaActualizacion);
     }
-    public String getNombre(){
-        return nombre;
-    }
+
     public String getDatos(){
-        return "Nombre " + nombre;
+        return  nombre;
+    }
+    public  List<Vino> getVinos(){
+        return vinos;
+    }
+    public void setVinos(List<Vino> vinos) {
+        this.vinos = vinos;
     }
 
-    public void actualizarVinos(String bodegaSeleccionada,List<String> actualizaciones){
-        //primero pregunta si el vino ya existe en la bodega y si existe lo actualiza y si no existe lo crea con los datos
-            Vino vinoActualizable = new Vino();
-            if(vinoActualizable.sosActualizable()){
-                vinoActualizable.setImagenEtiqueta();
-                vinoActualizable.setPrecioARS();
-                vinoActualizable.setNotaDeCataBodega();
 
-
+    public void addVino(Vino vino) {
+        if (vinos == null) {
+            vinos = new ArrayList<>();
         }
-    }
-
-    public void crearVinos(String bodegaSeleccionada,List<String> actualizaciones){
-
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder coordenadas = new StringBuilder();
-        if (coordenadasUbicacion != null) {
-            for (Double coord : coordenadasUbicacion) {
-                coordenadas.append(coord).append(" ");
-            }
-        }
-
-        return "Bodega{" +
-                "nombre='" + nombre + '\'' +
-                ", fechaUltimaActualizacion=" + fechaUltimaActualizacion +
-                ", periodicidadActualizacion=" + periodicidadActualizacion +
-                ", descripcion='" + descripcion + '\'' +
-                ", coordenadasUbicacion=" + coordenadas +
-                ", historia='" + historia + '\'' +
-                ", vinos=" + vinos +
-                '}';
+        vinos.add(vino);
     }
 
 

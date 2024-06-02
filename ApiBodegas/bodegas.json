@@ -2,10 +2,30 @@
     {
         "nombre": "Bodega Catena Zapata",
         "fechaUltimaActualizacion": "2024-05-30",
-        "periodicidadActualizacion": 1,
+        "periodicidadActualizacion": 190,
         "descripcion": "Bodega dedicada a la producción de vinos tintos.",
         "coordenadasUbicacion": [40.7128, -74.0060],
-        "historia": "Fundada en 1920, esta bodega ha sido pionera en la producción de vinos orgánicos."
+        "historia": "Fundada en 1920, esta bodega ha sido pionera en la producción de vinos orgánicos.",
+        "vinos": [
+            {
+                "nombre": "Malbec de Bodega Norton",
+                "imagenEtiqueta": "https://example.com/images/catena_zapata_malbec.jpg",
+                "notaCataBodega": 4.8,
+                "precioARS": 1200.50
+            },
+            {
+                "nombre": "Cabernet Sauvignon de Catena Zapata",
+                "imagenEtiqueta": "https://example.com/images/catena_zapata_cabernet.jpg",
+                "notaCataBodega": 4.7,
+                "precioARS": 1250.00
+            },
+            {
+                "nombre": "Chardonnay de Catena Zapata",
+                "imagenEtiqueta": "https://example.com/images/catena_zapata_chardonnay.jpg",
+                "notaCataBodega": 4.6,
+                "precioARS": 1100.00
+            }
+        ]
     },
     {
         "nombre": "Bodega Salentein",
@@ -13,7 +33,27 @@
         "periodicidadActualizacion": 45,
         "descripcion": "Bodega especializada en vinos blancos y rosados.",
         "coordenadasUbicacion": [34.0522, -118.2437],
-        "historia": "Con más de 50 años de historia, Bodega Salentein es reconocida por sus técnicas innovadoras de vinificación."
+        "historia": "Con más de 50 años de historia, Bodega Salentein es reconocida por sus técnicas innovadoras de vinificación.",
+        "vinos": [
+            {
+                "nombre": "Chardonnay de Salentein",
+                "imagenEtiqueta": "https://example.com/images/salentein_chardonnay.jpg",
+                "notaCataBodega": 4.5,
+                "precioARS": 950.00
+            },
+            {
+                "nombre": "Pinot Noir de Salentein",
+                "imagenEtiqueta": "https://example.com/images/salentein_pinot_noir.jpg",
+                "notaCataBodega": 4.4,
+                "precioARS": 1000.50
+            },
+            {
+                "nombre": "Sauvignon Blanc de Salentein",
+                "imagenEtiqueta": "https://example.com/images/salentein_sauvignon_blanc.jpg",
+                "notaCataBodega": 4.6,
+                "precioARS": 980.00
+            }
+        ]
     },
     {
         "nombre": "Bodega Norton",
@@ -21,7 +61,27 @@
         "periodicidadActualizacion": 60,
         "descripcion": "Bodega con una amplia gama de vinos espumosos.",
         "coordenadasUbicacion": [41.9028, 12.4964],
-        "historia": "Establecida en 1880, Bodega Norton ha ganado numerosos premios internacionales por sus vinos de alta calidad."
+        "historia": "Establecida en 1880, Bodega Norton ha ganado numerosos premios internacionales por sus vinos de alta calidad.",
+        "vinos": [
+            {
+                "nombre": "Malbec de Bodega Norton",
+                "imagenEtiqueta": "https://example.com/images/norton_espumoso.jpg",
+                "notaCataBodega": 4.3,
+                "precioARS": 1150.75
+            },
+            {
+                "nombre": "Norton Malbec",
+                "imagenEtiqueta": "https://example.com/images/norton_malbec.jpg",
+                "notaCataBodega": 4.5,
+                "precioARS": 1200.00
+            },
+            {
+                "nombre": "Norton Chardonnay",
+                "imagenEtiqueta": "https://example.com/images/norton_chardonnay.jpg",
+                "notaCataBodega": 4.4,
+                "precioARS": 1050.50
+            }
+        ]
     },
     {
         "nombre": "Bodega Luigi Bosca",
@@ -29,7 +89,27 @@
         "periodicidadActualizacion": 30,
         "descripcion": "Bodega histórica con una rica tradición en la producción de vinos finos.",
         "coordenadasUbicacion": [38.7223, -9.1393],
-        "historia": "Desde 1901, Bodega Luigi Bosca ha sido un referente en la industria vitivinícola argentina."
+        "historia": "Desde 1901, Bodega Luigi Bosca ha sido un referente en la industria vitivinícola argentina.",
+        "vinos": [
+            {
+                "nombre": "Luigi Bosca Cabernet Sauvignon",
+                "imagenEtiqueta": "https://example.com/images/luigi_bosca_cabernet.jpg",
+                "notaCataBodega": 4.7,
+                "precioARS": 1350.00
+            },
+            {
+                "nombre": "Luigi Bosca Malbec",
+                "imagenEtiqueta": "https://example.com/images/luigi_bosca_malbec.jpg",
+                "notaCataBodega": 4.8,
+                "precioARS": 1400.00
+            },
+            {
+                "nombre": "Luigi Bosca Chardonnay",
+                "imagenEtiqueta": "https://example.com/images/luigi_bosca_chardonnay.jpg",
+                "notaCataBodega": 4.6,
+                "precioARS": 1250.00
+            }
+        ]
     },
     {
         "nombre": "Bodega Trapiche",
@@ -37,7 +117,27 @@
         "periodicidadActualizacion": 45,
         "descripcion": "Una de las bodegas más importantes de Argentina, conocida por su innovación.",
         "coordenadasUbicacion": [51.5074, -0.1278],
-        "historia": "Bodega Trapiche, fundada en 1883, ha sido pionera en la exportación de vinos argentinos."
+        "historia": "Bodega Trapiche, fundada en 1883, ha sido pionera en la exportación de vinos argentinos.",
+        "vinos": [
+            {
+                "nombre": "Trapiche Reserva",
+                "imagenEtiqueta": "https://example.com/images/trapiche_reserva.jpg",
+                "notaCataBodega": 4.6,
+                "precioARS": 1100.30
+            },
+            {
+                "nombre": "Trapiche Malbec",
+                "imagenEtiqueta": "https://example.com/images/trapiche_malbec.jpg",
+                "notaCataBodega": 4.7,
+                "precioARS": 1150.00
+            },
+            {
+                "nombre": "Trapiche Chardonnay",
+                "imagenEtiqueta": "https://example.com/images/trapiche_chardonnay.jpg",
+                "notaCataBodega": 4.5,
+                "precioARS": 1080.50
+            }
+        ]
     },
     {
         "nombre": "Bodega Zuccardi",
@@ -45,7 +145,27 @@
         "periodicidadActualizacion": 60,
         "descripcion": "Bodega familiar que se destaca por su enfoque en la sostenibilidad.",
         "coordenadasUbicacion": [48.8566, 2.3522],
-        "historia": "Bodega Zuccardi ha sido reconocida globalmente por su compromiso con la sostenibilidad y la calidad."
+        "historia": "Bodega Zuccardi ha sido reconocida globalmente por su compromiso con la sostenibilidad y la calidad.",
+        "vinos": [
+            {
+                "nombre": "Zuccardi Malbec",
+                "imagenEtiqueta": "https://example.com/images/zuccardi_malbec.jpg",
+                "notaCataBodega": 4.9,
+                "precioARS": 1400.00
+            },
+            {
+                "nombre": "Zuccardi Cabernet Sauvignon",
+                "imagenEtiqueta": "https://example.com/images/zuccardi_cabernet.jpg",
+                "notaCataBodega": 4.8,
+                "precioARS": 1350.50
+            },
+            {
+                "nombre": "Zuccardi Chardonnay",
+                "imagenEtiqueta": "https://example.com/images/zuccardi_chardonnay.jpg",
+                "notaCataBodega": 4.7,
+                "precioARS": 1200.00
+            }
+        ]
     },
     {
         "nombre": "Bodega Ruca Malen",
@@ -53,7 +173,27 @@
         "periodicidadActualizacion": 30,
         "descripcion": "Bodega boutique que ofrece una experiencia única de maridaje.",
         "coordenadasUbicacion": [35.6895, 139.6917],
-        "historia": "Desde 1998, Bodega Ruca Malen ha sido conocida por su enfoque en la creación de experiencias enoturísticas."
+        "historia": "Desde 1998, Bodega Ruca Malen ha sido conocida por su enfoque en la creación de experiencias enoturísticas.",
+        "vinos": [
+            {
+                "nombre": "Ruca Malen Pinot Noir",
+                "imagenEtiqueta": "https://example.com/images/ruca_malen_pinot_noir.jpg",
+                "notaCataBodega": 4.4,
+                "precioARS": 1300.20
+            },
+            {
+                "nombre": "Ruca Malen Malbec",
+                "imagenEtiqueta": "https://example.com/images/ruca_malen_malbec.jpg",
+                "notaCataBodega": 4.6,
+                "precioARS": 1350.00
+            },
+            {
+                "nombre": "Ruca Malen Chardonnay",
+                "imagenEtiqueta": "https://example.com/images/ruca_malen_chardonnay.jpg",
+                "notaCataBodega": 4.5,
+                "precioARS": 1200.00
+            }
+        ]
     },
     {
         "nombre": "Bodega Achaval Ferrer",
@@ -61,7 +201,27 @@
         "periodicidadActualizacion": 45,
         "descripcion": "Bodega reconocida por la alta calidad de sus Malbec.",
         "coordenadasUbicacion": [40.7306, -73.9352],
-        "historia": "Bodega Achaval Ferrer, fundada en 1998, ha ganado numerosos premios por sus vinos de alta gama."
+        "historia": "Bodega Achaval Ferrer, fundada en 1998, ha ganado numerosos premios por sus vinos de alta gama.",
+        "vinos": [
+            {
+                "nombre": "Achaval Ferrer Malbec",
+                "imagenEtiqueta": "https://example.com/images/achaval_ferrer_malbec.jpg",
+                "notaCataBodega": 4.8,
+                "precioARS": 1500.00
+            },
+            {
+                "nombre": "Achaval Ferrer Cabernet Franc",
+                "imagenEtiqueta": "https://example.com/images/achaval_ferrer_cabernet_franc.jpg",
+                "notaCataBodega": 4.7,
+                "precioARS": 1550.50
+            },
+            {
+                "nombre": "Achaval Ferrer Chardonnay",
+                "imagenEtiqueta": "https://example.com/images/achaval_ferrer_chardonnay.jpg",
+                "notaCataBodega": 4.6,
+                "precioARS": 1400.00
+            }
+        ]
     },
     {
         "nombre": "Bodega Terrazas de los Andes",
@@ -69,7 +229,27 @@
         "periodicidadActualizacion": 60,
         "descripcion": "Bodega que produce vinos en terrazas a diferentes altitudes.",
         "coordenadasUbicacion": [37.7749, -122.4194],
-        "historia": "Con más de 20 años de historia, Bodega Terrazas de los Andes se ha destacado por sus vinos de altura."
+        "historia": "Con más de 20 años de historia, Bodega Terrazas de los Andes se ha destacado por sus vinos de altura.",
+        "vinos": [
+            {
+                "nombre": "Terrazas de los Andes Torrontés",
+                "imagenEtiqueta": "https://example.com/images/terrazas_andes_torrontes.jpg",
+                "notaCataBodega": 4.5,
+                "precioARS": 1050.60
+            },
+            {
+                "nombre": "Terrazas de los Andes Malbec",
+                "imagenEtiqueta": "https://example.com/images/terrazas_andes_malbec.jpg",
+                "notaCataBodega": 4.7,
+                "precioARS": 1100.00
+            },
+            {
+                "nombre": "Terrazas de los Andes Chardonnay",
+                "imagenEtiqueta": "https://example.com/images/terrazas_andes_chardonnay.jpg",
+                "notaCataBodega": 4.6,
+                "precioARS": 1080.50
+            }
+        ]
     },
     {
         "nombre": "Bodega Séptima",
@@ -77,7 +257,27 @@
         "periodicidadActualizacion": 30,
         "descripcion": "Bodega moderna con una arquitectura impresionante.",
         "coordenadasUbicacion": [34.0522, -118.2437],
-        "historia": "Bodega Séptima, parte del grupo Codorníu, se destaca por su diseño arquitectónico y sus vinos de calidad."
+        "historia": "Bodega Séptima, parte del grupo Codorníu, se destaca por su diseño arquitectónico y sus vinos de calidad.",
+        "vinos": [
+            {
+                "nombre": "Séptima Syrah",
+                "imagenEtiqueta": "https://example.com/images/septima_syrah.jpg",
+                "notaCataBodega": 4.6,
+                "precioARS": 1250.00
+            },
+            {
+                "nombre": "Séptima Malbec",
+                "imagenEtiqueta": "https://example.com/images/septima_malbec.jpg",
+                "notaCataBodega": 4.7,
+                "precioARS": 1300.50
+            },
+            {
+                "nombre": "Séptima Chardonnay",
+                "imagenEtiqueta": "https://example.com/images/septima_chardonnay.jpg",
+                "notaCataBodega": 4.5,
+                "precioARS": 1180.00
+            }
+        ]
     },
     {
         "nombre": "Bodega Andeluna",
@@ -85,46 +285,54 @@
         "periodicidadActualizacion": 45,
         "descripcion": "Bodega situada en los Andes con vinos elegantes.",
         "coordenadasUbicacion": [51.1657, 10.4515],
-        "historia": "Desde 2003, Bodega Andeluna ha sido sinónimo de elegancia y calidad en la región de Mendoza."
+        "historia": "Desde 2003, Bodega Andeluna ha sido sinónimo de elegancia y calidad en la región de Mendoza.",
+        "vinos": [
+            {
+                "nombre": "Andeluna Altitud",
+                "imagenEtiqueta": "https://example.com/images/andeluna_altitud.jpg",
+                "notaCataBodega": 4.7,
+                "precioARS": 1450.90
+            },
+            {
+                "nombre": "Andeluna Malbec",
+                "imagenEtiqueta": "https://example.com/images/andeluna_malbec.jpg",
+                "notaCataBodega": 4.8,
+                "precioARS": 1500.00
+            },
+            {
+                "nombre": "Andeluna Chardonnay",
+                "imagenEtiqueta": "https://example.com/images/andeluna_chardonnay.jpg",
+                "notaCataBodega": 4.6,
+                "precioARS": 1350.50
+            }
+        ]
     },
     {
         "nombre": "Bodega Viña Cobos",
         "fechaUltimaActualizacion": "2024-03-22",
         "periodicidadActualizacion": 60,
         "descripcion": "Bodega de autor que produce vinos premium.",
-        "coordenadasUbicacion": [41.8781, -87.6298],
-        "historia": "Fundada por el enólogo Paul Hobbs, Bodega Viña Cobos es conocida por sus vinos de alta gama."
-    },
-    {
-        "nombre": "Bodega Vistalba",
-        "fechaUltimaActualizacion": "2024-02-15",
-        "periodicidadActualizacion": 30,
-        "descripcion": "Bodega que combina tradición y modernidad en sus vinos.",
-        "coordenadasUbicacion": [48.1351, 11.5820],
-        "historia": "Bodega Vistalba, fundada en 2003, se ha destacado por su enfoque en la calidad y la innovación."
-    },
-    {
-        "nombre": "Bodega Rutini Wines",
-        "fechaUltimaActualizacion": "2024-01-25",
-        "periodicidadActualizacion": 45,
-        "descripcion": "Una de las bodegas más antiguas y prestigiosas de Argentina.",
-        "coordenadasUbicacion": [40.4168, -3.7038],
-        "historia": "Fundada en 1885, Bodega Rutini Wines ha sido un pilar en la industria vitivinícola argentina."
-    },
-    {
-        "nombre": "Bodega El Enemigo",
-        "fechaUltimaActualizacion": "2024-04-15",
-        "periodicidadActualizacion": 60,
-        "descripcion": "Bodega innovadora que desafía las normas tradicionales.",
-        "coordenadasUbicacion": [52.5200, 13.4050],
-        "historia": "Bodega El Enemigo, creada por Alejandro Vigil, es conocida por sus vinos audaces y únicos."
-    },
-    {
-        "nombre": "Bodega Finca La Anita",
-        "fechaUltimaActualizacion": "2024-03-10",
-        "periodicidadActualizacion": 30,
-        "descripcion": "Bodega boutique con una producción limitada y de alta calidad.",
-        "coordenadasUbicacion": [59.3293, 18.0686],
-        "historia": "Desde 1992, Bodega Finca La Anita ha sido sinónimo de excelencia y exclusividad en Mendoza."
+        "coordenadasUbicacion": [34.0007, -81.0348],
+        "historia": "Fundada por el enólogo estadounidense Paul Hobbs en 1998, Viña Cobos se destaca por sus vinos de alta gama.",
+        "vinos": [
+            {
+                "nombre": "Viña Cobos Felino Malbec",
+                "imagenEtiqueta": "https://example.com/images/vina_cobos_felino_malbec.jpg",
+                "notaCataBodega": 4.8,
+                "precioARS": 1600.00
+            },
+            {
+                "nombre": "Viña Cobos Bramare Cabernet Sauvignon",
+                "imagenEtiqueta": "https://example.com/images/vina_cobos_bramare_cabernet.jpg",
+                "notaCataBodega": 4.7,
+                "precioARS": 1700.00
+            },
+            {
+                "nombre": "Viña Cobos Chardonnay",
+                "imagenEtiqueta": "https://example.com/images/vina_cobos_chardonnay.jpg",
+                "notaCataBodega": 4.6,
+                "precioARS": 1500.50
+            }
+        ]
     }
 ]

@@ -1,0 +1,93 @@
+[
+    {
+        "nombre": "Malbec de Catena Zapata",
+        "imagenEtiqueta": "https://example.com/images/catena_zapata_malbec.jpg",
+        "notaCataBodega": 4.8,
+        "precioARS": 1200.50,
+        "maridaje": {
+            "nombre": "Carne Asada",
+            "descripcion": "Perfecto para acompañar carnes rojas asadas a la parrilla."
+        },
+        "varietal": {
+            "descripcion": "Malbec de alta calidad.",
+            "porcentajeComposicion": 100,
+            "tipoUva": {
+                "nombre": "Malbec",
+                "descripcion": "Uva tinta característica de la región de Mendoza."
+            }
+        }
+    },
+    {
+        "nombre": "Chardonnay de Salentein",
+        "imagenEtiqueta": "https://example.com/images/salentein_chardonnay.jpg",
+        "notaCataBodega": 4.5,
+        "precioARS": 950.00,
+        "maridaje": {
+            "nombre": "Pescado",
+            "descripcion": "Ideal para acompañar platos de pescado y mariscos."
+        },
+        "varietal": {
+            "descripcion": "Chardonnay fresco y afrutado.",
+            "porcentajeComposicion": 100,
+            "tipoUva": {
+                "nombre": "Chardonnay",
+                "descripcion": "Uva blanca utilizada para la elaboración de vinos blancos."
+            }
+        }
+    },
+    {
+        "nombre": "Norton Espumoso",
+        "imagenEtiqueta": "https://example.com/images/norton_espumoso.jpg",
+        "notaCataBodega": 4.3,
+        "precioARS": 1150.75,
+        "maridaje": {
+            "nombre": "Aperitivos",
+            "descripcion": "Perfecto para acompañar una variedad de aperitivos."
+        },
+        "varietal": {
+            "descripcion": "Vino espumoso elegante.",
+            "porcentajeComposicion": 100,
+            "tipoUva": {
+                "nombre": "Pinot Noir",
+                "descripcion": "Uva tinta utilizada en la elaboración de espumosos."
+            }
+        }
+    },
+    {
+        "nombre": "Luigi Bosca Cabernet Sauvignon",
+        "imagenEtiqueta": "https://example.com/images/luigi_bosca_cabernet.jpg",
+        "notaCataBodega": 4.7,
+        "precioARS": 1350.00,
+        "maridaje": {
+            "nombre": "Cordero",
+            "descripcion": "Excelente para acompañar platos de cordero."
+        },
+        "varietal": {
+            "descripcion": "Cabernet Sauvignon intenso.",
+            "porcentajeComposicion": 100,
+            "tipoUva": {
+                "nombre": "Cabernet Sauvignon",
+                "descripcion": "Uva tinta conocida por su estructura y longevidad."
+            }
+        }
+    },
+    {
+        "nombre": "Malbec de Bodega Norton",
+        "imagenEtiqueta": "https://example.com/images/trapiche_reserva.jpg",
+        "notaCataBodega": 4.6,
+        "precioARS": 1100.30,
+        "maridaje": {
+            "nombre": "Quesos maduros",
+            "descripcion": "Acompaña perfectamente una tabla de quesos maduros."
+        },
+        "varietal": {
+            "descripcion": "Reserva de alta calidad.",
+            "porcentajeComposicion": 100,
+            "tipoUva": {
+                "nombre": "Malbec",
+                "descripcion": "Uva tinta característica de la región de Mendoza."
+            }
+        }
+    }
+
+]

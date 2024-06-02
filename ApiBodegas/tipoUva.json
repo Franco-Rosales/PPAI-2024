@@ -1,0 +1,22 @@
+[
+    {
+        "nombre": "Malbec",
+        "descripcion": "Uva tinta característica de la región de Mendoza."
+    },
+    {
+        "nombre": "Chardonnay",
+        "descripcion": "Uva blanca utilizada para la elaboración de vinos blancos."
+    },
+    {
+        "nombre": "Pinot Noir",
+        "descripcion": "Uva tinta utilizada en la elaboración de espumosos."
+    },
+    {
+        "nombre": "Cabernet Sauvignon",
+        "descripcion": "Uva tinta conocida por su estructura y longevidad."
+    },
+    {
+        "nombre": "Malbec",
+        "descripcion": "Uva tinta característica de la región de Mendoza."
+    }
+]

@@ -40,7 +40,7 @@ public class Bodega {
     }
 
     public String getDatos(){
-        return  nombre;
+        return nombre;
     }
     public  List<Vino> getVinos(){
         return vinos;
@@ -57,5 +57,23 @@ public class Bodega {
         vinos.add(vino);
     }
 
+    public void actualizarVino (Vino vinoExistente, Vino datoDeActualizacionVino){
+        for(Vino vino : vinos){
+            if(vino.equals(vinoExistente)){
+                System.out.println("Precio antes: "+vino.getPrecioARS());
+                vino.setImagenEtiqueta(datoDeActualizacionVino.getImagenEtiqueta());
+                vino.setNotaDeCataBodega(datoDeActualizacionVino.getNotaDeCataBodega());
+                vino.setPrecioARS(datoDeActualizacionVino.getPrecioARS());
+
+                System.out.println("Precio despues: "+vino.getPrecioARS());
+            }
+        }
+    }
+
+    public void crearVino (Vino vino, TipoUva uvaSeleccionada, Maridaje maridajeSeleccionado){
+        // Se crea un nuevo vino
+        Vino vinoNuevo = new Vino(vino.getNombre(), vino.getImagenEtiqueta(), vino.getPrecioARS(), vino.getNotaDeCataBodega(), vino.getVarietal(), maridajeSeleccionado);
+        System.out.println("Vino creado con exito...");
+    }
 
 }

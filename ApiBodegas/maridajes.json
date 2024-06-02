@@ -1,0 +1,22 @@
+[
+    {
+        "nombre": "Carne Asada",
+        "descripcion": "Perfecto para acompañar carnes rojas asadas a la parrilla."
+    },
+    {
+        "nombre": "Pescado",
+        "descripcion": "Ideal para acompañar platos de pescado y mariscos."
+    },
+    {
+        "nombre": "Aperitivos",
+        "descripcion": "Perfecto para acompañar una variedad de aperitivos."
+    },
+    {
+        "nombre": "Cordero",
+        "descripcion": "Excelente para acompañar platos de cordero."
+    },
+    {
+        "nombre": "Quesos maduros",
+        "descripcion": "Acompaña perfectamente una tabla de quesos maduros."
+    }
+]

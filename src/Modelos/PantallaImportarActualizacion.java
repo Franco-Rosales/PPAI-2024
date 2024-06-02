@@ -20,10 +20,10 @@ public class PantallaImportarActualizacion {
         this.gestor = new GestorImportarActualizacion();
     }
 
-    public void tomarOpcionActualizacionVinos(List<Bodega> listaBodegas){
+    public void tomarOpcionActualizacionVinos(List<Bodega> listaTodasBodegas){
         habilitarPantalla();
-        this.bodegasActualizables = gestor.opcionActualizarVinos(listaBodegas);
-        mostrarBodegasActualizables(bodegasActualizables, listaBodegas);
+        this.bodegasActualizables = gestor.opcionActualizarVinos(listaTodasBodegas);
+        mostrarBodegasActualizables(bodegasActualizables, listaTodasBodegas);
 
     }
 
@@ -48,6 +48,7 @@ public class PantallaImportarActualizacion {
         // Convertir la lista a un array para el JList
         DefaultListModel<String> listModel = new DefaultListModel<>();
         for (String bodega : bodegasActualizables) {
+
             listModel.addElement(bodega);
         }
         listaBodegas.setModel(listModel);

@@ -69,8 +69,8 @@ public class Vino {
         String datosMaridaje = (maridaje != null) ? maridaje.getDatos() : "-";
 
         return String.format(
-                "Nombre: %s\nImagen: %s\nNota de Cata: %.2f\nPrecio (ARS): %.2f\nAniada: %s\nVarietal: %s\nMaridaje: %s",
-                nombre, imagenEtiqueta, notaCataBodega, precioARS, aniada,descripcionVarietal, datosMaridaje
+                "Nombre: %s\nImagen: %s\nNota de Cata: %.2f\nPrecio (ARS): %.2f\n Añiada: %s\nVarietal: %s\nMaridaje: %s",
+                nombre, imagenEtiqueta, notaCataBodega, precioARS,aniada, descripcionVarietal, datosMaridaje
         );
     }
 

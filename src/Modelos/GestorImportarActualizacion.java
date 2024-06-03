@@ -60,7 +60,6 @@ public class GestorImportarActualizacion {
             List<Bodega> bodegasFromJson = gson.fromJson(reader, bodegaListType);
 
             for (Bodega bodega : bodegasFromJson) {
-                // Agregar la bodega a la lista de bodegas
                 Listabodegas.add(bodega);
 
             }
@@ -93,9 +92,6 @@ public class GestorImportarActualizacion {
         }
         return bodegasConActualizacion; // Devolver la lista de bodegas que necesitan actualización
     }
-
-
-
 
     public void tomarSeleccionBodega(String bodegaSeleccionada, List<Bodega> listaBodegas) {
         for (Bodega bodega: listaBodegas){

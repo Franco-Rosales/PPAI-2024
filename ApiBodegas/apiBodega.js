@@ -40,6 +40,7 @@ const Vinos = sequelize.define('Vinos', {
     imagenEtiqueta: {type: DataTypes.STRING},
     notaCataBodega: {type: DataTypes.FLOAT},
     precioARS: {type: DataTypes.FLOAT},
+    aniada:{type:DataTypes.INTEGER},
     maridaje: {type: DataTypes.JSON},
     varietal: {type: DataTypes.JSON}
     },

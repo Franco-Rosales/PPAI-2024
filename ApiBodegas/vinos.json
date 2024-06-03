@@ -4,6 +4,7 @@
         "imagenEtiqueta": "https://example.com/images/catena_zapata_malbec.jpg",
         "notaCataBodega": 4.8,
         "precioARS": 1200.50,
+        "aniada": 2020,
         "maridaje": {
             "nombre": "Carne Asada",
             "descripcion": "Perfecto para acompañar carnes rojas asadas a la parrilla."
@@ -15,14 +16,14 @@
                 "nombre": "Malbec",
                 "descripcion": "Uva tinta característica de la región de Mendoza."
             }
-        },
-        "aniada": 2020
+        }
     },
     {
         "nombre": "Chardonnay de Salentein",
         "imagenEtiqueta": "https://example.com/images/salentein_chardonnay.jpg",
         "notaCataBodega": 4.5,
         "precioARS": 950.00,
+        "aniada": 2019,
         "maridaje": {
             "nombre": "Pescado",
             "descripcion": "Ideal para acompañar platos de pescado y mariscos."
@@ -34,14 +35,14 @@
                 "nombre": "Chardonnay",
                 "descripcion": "Uva blanca utilizada para la elaboración de vinos blancos."
             }
-        },
-        "aniada": 2019
+        }
     },
     {
         "nombre": "Norton Espumoso",
         "imagenEtiqueta": "https://example.com/images/norton_espumoso.jpg",
         "notaCataBodega": 4.3,
         "precioARS": 1150.75,
+        "aniada": 2021,
         "maridaje": {
             "nombre": "Aperitivos",
             "descripcion": "Perfecto para acompañar una variedad de aperitivos."
@@ -53,14 +54,14 @@
                 "nombre": "Pinot Noir",
                 "descripcion": "Uva tinta utilizada en la elaboración de espumosos."
             }
-        },
-        "aniada": 2021
+        }
     },
     {
         "nombre": "Luigi Bosca Cabernet Sauvignon",
         "imagenEtiqueta": "https://example.com/images/luigi_bosca_cabernet.jpg",
         "notaCataBodega": 4.7,
         "precioARS": 1350.00,
+        "aniada": 2018,
         "maridaje": {
             "nombre": "Cordero",
             "descripcion": "Excelente para acompañar platos de cordero."
@@ -72,14 +73,14 @@
                 "nombre": "Cabernet Sauvignon",
                 "descripcion": "Uva tinta conocida por su estructura y longevidad."
             }
-        },
-        "aniada": 2018
+        }
     },
     {
         "nombre": "Malbec de Bodega Norton",
         "imagenEtiqueta": "https://example.com/images/trapiche_reserva.jpg",
         "notaCataBodega": 4.6,
         "precioARS": 1100.30,
+        "aniada": 2017,
         "maridaje": {
             "nombre": "Quesos maduros",
             "descripcion": "Acompaña perfectamente una tabla de quesos maduros."
@@ -91,7 +92,6 @@
                 "nombre": "Malbec",
                 "descripcion": "Uva tinta característica de la región de Mendoza."
             }
-        },
-        "aniada": 2017
+        }
     }
 ]

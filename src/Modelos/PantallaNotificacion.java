@@ -11,7 +11,7 @@ public class PantallaNotificacion {
         System.out.println("Notificando a los enófilos: " + enofilosANotificar);
         System.out.println("Notificación enviada");
 
-        Timer timer = new Timer(3000, e -> {
+        Timer timer = new Timer(2000, e -> {
             // Crear y configurar la ventana
             JFrame frame = new JFrame("Enviar Notificación a Enófilo");
             frame.setSize(400, 300);

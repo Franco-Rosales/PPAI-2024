@@ -80,7 +80,8 @@
                 "nombre": "Norton Malbec",
                 "imagenEtiqueta": "https://example.com/images/norton_malbec.jpg",
                 "notaCataBodega": 4.5,
-                "precioARS": 1200.00
+                "precioARS": 1200.00,
+                "aniada": 2019
             },
             {
                 "nombre": "Norton Chardonnay",

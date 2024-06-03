@@ -1,0 +1,112 @@
+[
+    {
+        "apellido": "Garcia",
+        "nombre": "Juan",
+        "imagenPerfil": "https://example.com/images/juan_garcia.jpg",
+        "siguiendo": [
+            {
+                "fechaInicio": "2023-01-01",
+                "fechaFin": "2023-06-30",
+                "bodegaSeguida": "Bodega Catena Zapata"
+            },
+            {
+                "fechaInicio": "2023-07-01",
+                "fechaFin": "2023-12-31",
+                "bodegaSeguida": "Bodega Norton"
+            }
+        ],
+        "usuario": {
+            "nombre": "juan123",
+            "contrasenia": "securePass1",
+            "esPremium": true
+        }
+    },
+    {
+        "apellido": "Martinez",
+        "nombre": "Laura",
+        "imagenPerfil": "https://example.com/images/laura_martinez.jpg",
+        "siguiendo": [
+            {
+                "fechaInicio": "2023-02-01",
+                "fechaFin": "2023-06-30",
+                "bodegaSeguida": "Bodega Salentein"
+            },
+            {
+                "fechaInicio": "2023-07-01",
+                "fechaFin": "2023-11-30",
+                "bodegaSeguida": "Bodega Luigi Bosca"
+            }
+        ],
+        "usuario": {
+            "nombre": "lauraM",
+            "contrasenia": "securePass2",
+            "esPremium": false
+        }
+    },
+    {
+        "apellido": "Rodriguez",
+        "nombre": "Carlos",
+        "imagenPerfil": "https://example.com/images/carlos_rodriguez.jpg",
+        "siguiendo": [
+            {
+                "fechaInicio": "2023-03-01",
+                "fechaFin": "2023-07-31",
+                "bodegaSeguida": "Bodega Norton"
+            },
+            {
+                "fechaInicio": "2023-08-01",
+                "fechaFin": "2023-10-31",
+                "bodegaSeguida": "Bodega Trapiche"
+            }
+        ],
+        "usuario": {
+            "nombre": "carlosR",
+            "contrasenia": "securePass3",
+            "esPremium": true
+        }
+    },
+    {
+        "apellido": "Lopez",
+        "nombre": "Ana",
+        "imagenPerfil": "https://example.com/images/ana_lopez.jpg",
+        "siguiendo": [
+            {
+                "fechaInicio": "2023-04-01",
+                "fechaFin": "2023-07-31",
+                "bodegaSeguida": "Bodega Luigi Bosca"
+            },
+            {
+                "fechaInicio": "2023-08-01",
+                "fechaFin": "2023-09-30",
+                "bodegaSeguida": "Bodega Andeluna"
+            }
+        ],
+        "usuario": {
+            "nombre": "anaL",
+            "contrasenia": "securePass4",
+            "esPremium": false
+        }
+    },
+    {
+        "apellido": "Fernandez",
+        "nombre": "Pedro",
+        "imagenPerfil": "https://example.com/images/pedro_fernandez.jpg",
+        "siguiendo": [
+            {
+                "fechaInicio": "2023-05-01",
+                "fechaFin": "2023-07-31",
+                "bodegaSeguida": "Bodega Trapiche"
+            },
+            {
+                "fechaInicio": "2023-08-01",
+                "fechaFin": "2023-08-31",
+                "bodegaSeguida": "Bodega Viña Cobos"
+            }
+        ],
+        "usuario": {
+            "nombre": "pedroF",
+            "contrasenia": "securePass5",
+            "esPremium": true
+        }
+    }
+]

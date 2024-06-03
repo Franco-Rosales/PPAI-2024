@@ -19,7 +19,8 @@ public class Vino {
         return precioARS;
     }
 
-    public double getNotaDeCataBodega() {
+
+    public double getNotaCataBodega() {
         return notaCataBodega;
     }
 
@@ -39,8 +40,9 @@ public class Vino {
         this.precioARS = precioARS;
     }
 
-    public void setNotaDeCataBodega(double notaDeCataBodega) {
-        this.notaCataBodega = notaDeCataBodega;
+
+    public void setNotaCataBodega(double notaCataBodega) {
+        this.notaCataBodega = notaCataBodega;
     }
 
     public String getNombre(){

@@ -125,7 +125,6 @@ public class GestorImportarActualizacion {
         String respuestaConActualizaciones = response.body();
 
         List<Vino> actualizaciones = parsearRespuesta(respuestaConActualizaciones);
-
         // Lista para almacenar vinos actualizados o creados
         List<Vino> vinosProcesados = new ArrayList<>();
 
@@ -141,7 +140,7 @@ public class GestorImportarActualizacion {
                 vinosProcesados.add(vino);
             }
         }
-        pantalla.resumenBodegasActualizadas(bodegaSeleccionada, vinosProcesados);
+        pantalla.mostrarResumenBodegasActualizadas(bodegaSeleccionada, vinosProcesados);
 
     }
 
@@ -186,7 +185,6 @@ public class GestorImportarActualizacion {
 
     private void actualizarVinos(Vino vinoExistente, Vino datoDeActualizacionVino) {
         bodegaSeleccionada.actualizarVino(vinoExistente, datoDeActualizacionVino);
-
     }
 
     private void crearVinos(Vino vino) {

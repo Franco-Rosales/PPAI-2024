@@ -59,12 +59,9 @@ public class Bodega {
     public void actualizarVino(Vino vinoExistente, Vino datoDeActualizacionVino){
         for(Vino vino : vinos){
             if(vino.equals(vinoExistente)){
-
                 vino.setImagenEtiqueta(datoDeActualizacionVino.getImagenEtiqueta());
                 vino.setNotaCataBodega(datoDeActualizacionVino.getNotaCataBodega());
                 vino.setPrecioARS(datoDeActualizacionVino.getPrecioARS());
-
-
             }
         }
     }
@@ -72,7 +69,6 @@ public class Bodega {
     public void crearVino (Vino vino, TipoUva uvaSeleccionada, Maridaje maridajeSeleccionado){
         // Se crea un nuevo vino
         Vino vinoNuevo = new Vino(vino.getNombre(), vino.getImagenEtiqueta(), vino.getPrecioARS(), vino.getNotaCataBodega(), vino.getVarietal(), maridajeSeleccionado);
-
     }
 
 }

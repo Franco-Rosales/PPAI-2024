@@ -97,7 +97,8 @@ public class GestorImportarActualizacion {
 
 
 
-    public void tomarSeleccionBodega(String bodegaSeleccionada, List<Bodega> listaBodegas) {
+    public void tomarSeleccionDeBodega(String bodegaSeleccionada, List<Bodega> listaBodegas) {
+
         for (Bodega bodega: listaBodegas){
             if (bodega.getDatos().equals(bodegaSeleccionada)){
                 this.bodegaSeleccionada = bodega;
@@ -122,6 +123,7 @@ public class GestorImportarActualizacion {
 
         // Obtener la respuesta y parsearla a una lista de vinos
         String respuestaConActualizaciones = response.body();
+
         List<Vino> actualizaciones = parsearRespuesta(respuestaConActualizaciones);
         // Lista para almacenar vinos actualizados o creados
         List<Vino> vinosProcesados = new ArrayList<>();

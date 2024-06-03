@@ -9,6 +9,7 @@ public class Vino {
     private double notaCataBodega;
     private Maridaje maridaje;
     private Varietal varietal;
+    
 
     public String getImagenEtiqueta() {
         return imagenEtiqueta;
@@ -17,6 +18,7 @@ public class Vino {
     public double getPrecioARS() {
         return precioARS;
     }
+
 
     public double getNotaCataBodega() {
         return notaCataBodega;
@@ -37,6 +39,7 @@ public class Vino {
     public void setPrecioARS(double precioARS) {
         this.precioARS = precioARS;
     }
+
 
     public void setNotaCataBodega(double notaCataBodega) {
         this.notaCataBodega = notaCataBodega;

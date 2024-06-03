@@ -3,6 +3,7 @@ package Principal;
 import Modelos.Bodega;
 import Modelos.GestorImportarActualizacion;
 import Modelos.PantallaImportarActualizacion;
+import Modelos.PantallaNotificacion;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -11,8 +12,9 @@ import java.util.List;
 
 public class main {
     public static void main(String[] args) {
-        GestorImportarActualizacion gestor = new GestorImportarActualizacion();
-        gestor.crearBodegasDesdeJSON("C:\\Users\\PC\\OneDrive\\Escritorio\\DSI_PPAI_2024\\2\\PPAI-2024\\ApiBodegas\\bodegas.json");
+        PantallaNotificacion pantallaNotificacion = new PantallaNotificacion();
+        GestorImportarActualizacion gestor = new GestorImportarActualizacion(pantallaNotificacion);
+        gestor.crearBodegasDesdeJSON("ApiBodegas/bodegas.json");
 
 
         // Crear y configurar la ventana principal
@@ -24,7 +26,8 @@ public class main {
         JButton boton = new JButton("Mostrar Bodegas Actualizables");
 
         // Crear una instancia de Boundary
-        PantallaImportarActualizacion pantalla = new PantallaImportarActualizacion();
+        PantallaImportarActualizacion pantalla = new PantallaImportarActualizacion(pantallaNotificacion);
+
 
         // Crear la lista de TODAS las bodegas
         List<Bodega> listaBodegas = gestor.getBodegas();

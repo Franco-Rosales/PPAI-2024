@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0aa97b36-5718-449b-a4c7-cb25996c14ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Modelos/Maridaje.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Modelos/TipoUva.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Modelos/Varietal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Modelos/Enofilo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Modelos/PantallaNotificacion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Modelos/Siguiendo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Modelos/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_11_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_11_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelos/Bodega.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/Bodega.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelos/GestorImportarActualizacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/GestorImportarActualizacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelos/Maridaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/Maridaje.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelos/PantallaImportarActualizacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/PantallaImportarActualizacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelos/Varietal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/Varietal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelos/Vino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/Vino.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Principal/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Principal/main.java" afterDir="false" />
     </list>
@@ -111,5 +114,8 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>

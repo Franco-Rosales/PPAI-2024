@@ -12,7 +12,10 @@ public class Maridaje {
     }
 
     public String getDatos(){
-        return this.nombre;
+        if (nombre != null){
+            return nombre;
+        }
+        return "-";
     }
 
 }

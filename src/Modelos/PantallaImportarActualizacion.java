@@ -16,8 +16,10 @@ public class PantallaImportarActualizacion {
     private JTextArea areaTexto;
     private JList<String> listaBodegas;
 
-    public PantallaImportarActualizacion() {
-        this.gestor = new GestorImportarActualizacion();
+    public PantallaImportarActualizacion(PantallaNotificacion pantallaNotificacion) {
+        this.gestor = new GestorImportarActualizacion(pantallaNotificacion);
+        gestor.setPantalla(this);
+
     }
 
     public void tomarOpcionActualizacionVinos(List<Bodega> listaTodasBodegas){
@@ -85,6 +87,39 @@ public class PantallaImportarActualizacion {
         } else {
             JOptionPane.showMessageDialog(null, "Por favor, seleccione una bodega.");
         }
+    }
+
+    public void resumenBodegasActualizadas(Bodega bodegaSeleccionada, List<Vino> vinosActualizadosOCreados) {
+        // Crear la ventana
+        JFrame frame = new JFrame("Resumen de Bodegas Actualizadas");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setSize(400, 600);
+        frame.setLayout(new BorderLayout());
+
+        // Panel para el nombre de la bodega
+        JPanel panelNombreBodega = new JPanel();
+        JLabel labelNombreBodega = new JLabel(bodegaSeleccionada.getDatos(), SwingConstants.CENTER);
+        panelNombreBodega.add(labelNombreBodega);
+        frame.add(panelNombreBodega, BorderLayout.NORTH);
+
+        // Panel para los datos de los vinos
+        JPanel panelDatosVinos = new JPanel();
+        panelDatosVinos.setLayout(new BoxLayout(panelDatosVinos, BoxLayout.Y_AXIS));
+        panelDatosVinos.setBorder(BorderFactory.createTitledBorder("Datos de los Vinos Actualizados/Creados"));
+
+        for (Vino vino : vinosActualizadosOCreados) {
+            JTextArea textArea = new JTextArea();
+            textArea.setEditable(false);
+            textArea.setText(vino.getDatos());
+            panelDatosVinos.add(new JScrollPane(textArea));
+        }
+
+        frame.add(panelDatosVinos, BorderLayout.CENTER);
+
+        // Mostrar la ventana
+        frame.setVisible(true);
+
+        gestor.buscarEnofiloSuscriptoABodega();
     }
 
 

@@ -54,9 +54,10 @@ public class Vino {
         this.varietal = nuevoVarietal;
         this.maridaje = maridaje;
     }
-    public void muestraFichaTecnica(){
-        System.out.println("Vino: " + nombre);
-        System.out.println("Precio: " + precioARS);
-        System.out.println("Nota de cata: " + notaDeCataBodega);
+    public String getDatos() {
+        return String.format(
+                "Nombre: %s\nImagen: %s\nNota de Cata: %.2f\nPrecio (ARS): %.2f\nVarietal: %s\nMaridaje: %s",
+                nombre, imagenEtiqueta, notaDeCataBodega, precioARS, varietal, maridaje
+        );
     }
 }

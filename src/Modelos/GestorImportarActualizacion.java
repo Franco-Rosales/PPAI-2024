@@ -16,6 +16,8 @@ import java.util.*;
 
 public class GestorImportarActualizacion {
     private TipoUva uvaSeleccionada;
+    private Enofilo enofiloSeleccionado;
+    private PantallaImportarActualizacion pantalla;
 
     private Maridaje maridajeSeleccionado;
 
@@ -24,14 +26,26 @@ public class GestorImportarActualizacion {
     private Bodega bodegaSeleccionada;
     private List<TipoUva> listaTipoUvas;
     private List<Maridaje> listaMaridajes;
+    private List<Enofilo> listaEnofilos;
+
+    private List<String> enofilosANotificar;
+    private PantallaNotificacion pantallaNotificacion;
 
     public void setListabodegas(List<Bodega> listabodegas) {
         Listabodegas = listabodegas;
     }
 
-    public GestorImportarActualizacion() {
+    public GestorImportarActualizacion(PantallaNotificacion pantallaNotificacion) {
         this.Listabodegas = new ArrayList<>();
         this.listaTipoUvas = new ArrayList<>();
+        this.listaEnofilos = new ArrayList<>();
+        this.listaMaridajes = new ArrayList<>();
+        this.enofilosANotificar = new ArrayList<>();
+        this.pantallaNotificacion = pantallaNotificacion;
+
+    }
+    public void setPantalla(PantallaImportarActualizacion pantalla) {
+        this.pantalla = pantalla;
     }
 
 
@@ -108,7 +122,7 @@ public class GestorImportarActualizacion {
         }
     }
 
-    public void obtenerActualizacionesBodega(String bodegaSeleccionada, List<Bodega> listaBodegas) throws IOException, InterruptedException {
+    public void obtenerActualizacionesBodega(String bodegaSeleccionadaString, List<Bodega> listaBodegas) throws IOException, InterruptedException {
         // Construir la dirección del endpoint con el nombre de la bodega seleccionada
         String direccion = "http://localhost:3000/vinos";
                 //+ URLEncoder.encode(bodegaSeleccionada, StandardCharsets.UTF_8.toString());
@@ -131,7 +145,7 @@ public class GestorImportarActualizacion {
 
         // Lógica para decidir si crear o actualizar un vino
         for (Vino vino : actualizaciones) {
-            Optional<Vino> vinoExistente = buscarVinoPorNombre(vino.getNombre(), bodegaSeleccionada, listaBodegas);
+            Optional<Vino> vinoExistente = buscarVinoPorNombre(vino.getNombre(), bodegaSeleccionadaString, listaBodegas);
             if (vinoExistente.isPresent()) {
                 actualizarVinos(vinoExistente.get(), vino);
                 vinosProcesados.add(vinoExistente.get());
@@ -140,12 +154,14 @@ public class GestorImportarActualizacion {
                 vinosProcesados.add(vino);
             }
         }
+        pantalla.resumenBodegasActualizadas(bodegaSeleccionada, vinosProcesados);
+
     }
 
     private void buscarTipoUva(Vino vino) {
         Gson gson = new Gson();
         Type tipoDeUvaListType = new TypeToken<ArrayList<TipoUva>>() {}.getType();
-        try (FileReader reader = new FileReader("C:\\Users\\PC\\OneDrive\\Escritorio\\DSI_PPAI_2024\\2\\PPAI-2024\\ApiBodegas\\tipoUva.json")) {
+        try (FileReader reader = new FileReader("ApiBodegas/tipoUva.json")) {
             List<TipoUva> tiposDeUva = gson.fromJson(reader, tipoDeUvaListType);
             listaTipoUvas.addAll(tiposDeUva);
             for (TipoUva uva : listaTipoUvas){
@@ -164,7 +180,7 @@ public class GestorImportarActualizacion {
     private void buscarTipoMaridaje(Vino vino) {
         Gson gson = new Gson();
         Type maridajesListType = new TypeToken<ArrayList<Maridaje>>() {}.getType();
-        try (FileReader reader = new FileReader("C:\\Users\\PC\\OneDrive\\Escritorio\\DSI_PPAI_2024\\2\\PPAI-2024\\ApiBodegas\\maridajes.json")) {
+        try (FileReader reader = new FileReader("ApiBodegas/maridajes.json")) {
             List<Maridaje> maridajes = gson.fromJson(reader, maridajesListType);
             //listaMaridajes.addAll(maridajes);
             this.listaMaridajes = maridajes;
@@ -184,6 +200,7 @@ public class GestorImportarActualizacion {
     private void actualizarVinos(Vino vinoExistente, Vino datoDeActualizacionVino) {
         bodegaSeleccionada.actualizarVino(vinoExistente, datoDeActualizacionVino);
         System.out.println("Vino actualizado: " + vinoExistente.getNombre());
+
     }
 
     private void crearVinos(Vino vino) {
@@ -219,6 +236,27 @@ public class GestorImportarActualizacion {
             }
         }
         return Optional.empty();
+    }
+
+    public void buscarEnofiloSuscriptoABodega(){
+        Gson gson = new Gson();
+        Type enofiloType = new TypeToken<ArrayList<Enofilo>>() {}.getType();
+        try (FileReader reader = new FileReader("ApiBodegas/enofilos.json")) {
+            List<Enofilo> enofilos = gson.fromJson(reader, enofiloType);
+            listaEnofilos.addAll(enofilos);
+            System.out.println(listaEnofilos);
+            for (Enofilo enofilo : listaEnofilos) {
+                String nombreUsuario = enofilo.obtenerNombreEnofiloSuscripto(bodegaSeleccionada);
+                if (!nombreUsuario.equals("-")) {
+                    enofilosANotificar.add(nombreUsuario);
+                }
+            }
+            pantallaNotificacion.notificarNovedadesImportadas(enofilosANotificar);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
 

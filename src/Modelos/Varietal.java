@@ -6,7 +6,10 @@ public class Varietal {
     private TipoUva tipoUva;
 
     public String getDescripcion() {
-        return descripcion;
+        if (descripcion != null){
+            return descripcion;
+        }
+        return "-";
     }
 
     public int getPorcentComposicion() {

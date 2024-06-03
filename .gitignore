@@ -31,3 +31,5 @@ bin/
 node_modules/
 workspace.xml
 .idea/
+.idea
+.idea/*

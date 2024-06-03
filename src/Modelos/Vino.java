@@ -46,7 +46,7 @@ public class Vino {
         return nombre;
     }
     public Vino(String nombre, String imagenEtiqueta, double notaDeCataBodega, double precioARS, Varietal varietal, Maridaje maridaje) {
-        Varietal nuevoVarietal = new Varietal(varietal.getDescripcion(), varietal.getPorcentComposicion(), varietal.getTipoUva());
+        Varietal nuevoVarietal = crearVarietal(varietal);
         this.nombre = nombre;
         this.imagenEtiqueta = imagenEtiqueta;
         this.notaDeCataBodega = notaDeCataBodega;
@@ -59,5 +59,10 @@ public class Vino {
                 "Nombre: %s\nImagen: %s\nNota de Cata: %.2f\nPrecio (ARS): %.2f\nVarietal: %s\nMaridaje: %s",
                 nombre, imagenEtiqueta, notaDeCataBodega, precioARS, varietal, maridaje
         );
+    }
+
+    public Varietal crearVarietal(Varietal varietal){
+        Varietal nuevoVarietal = new Varietal(varietal.getDescripcion(), varietal.getPorcentComposicion(), varietal.getTipoUva());
+        return nuevoVarietal;
     }
 }

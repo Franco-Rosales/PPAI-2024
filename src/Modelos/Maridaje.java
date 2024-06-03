@@ -5,10 +5,7 @@ public class Maridaje {
     private String descripcion;
 
     public Boolean esMaridajeActualizacion(Maridaje maridaje){
-        if (maridaje.equals(this.nombre)){
-            return true;
-        }
-        return false;
+        return maridaje.equals(this.nombre);
     }
 
     public String getDatos(){

@@ -27,7 +27,7 @@ public class Enofilo {
                 if (siguiendo.getFechaFin() != null){
                     Boolean esDeBodega = siguiendo.sosDeBodega(bodegaSeleccionada);
                     if (esDeBodega) {
-                        String nombreUsuario = usuario.getNombre();
+                        String nombreUsuario = buscarNombreDeUsuario();
                         return nombreUsuario;
                     }
                 }
@@ -36,5 +36,8 @@ public class Enofilo {
         return "-";
     }
 
+    public String buscarNombreDeUsuario(){
+        return usuario.getNombre();
+    }
 
 }

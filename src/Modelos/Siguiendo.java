@@ -1,13 +1,14 @@
 package Modelos;
 
-public class Siguiendo {
-    private String fechaInicio;
-    private String fechaFin;
+import java.util.Date;
 
+public class Siguiendo {
+    private Date fechaInicio;
+    private Date fechaFin;
     private String bodegaSeguida;
 
 
-    public Siguiendo(String fechaInicio, String fechaFin) {
+    public Siguiendo(Date fechaInicio, Date fechaFin) {
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
     }
@@ -19,7 +20,7 @@ public class Siguiendo {
         return false;
     }
 
-    public String getFechaFin() {
+    public Date getFechaFin() {
         return fechaFin;
     }
 }

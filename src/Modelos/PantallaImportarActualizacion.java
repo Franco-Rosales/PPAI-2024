@@ -8,13 +8,10 @@ import java.io.IOException;
 import java.util.List;
 
 public class PantallaImportarActualizacion {
-
-    // LOS ATRIBUTOS NO SON DEFINITIVOS SON PARA PROBAR
     private List<String> bodegasActualizables;
-    private String nombreBodegaSeleccionada;
-    private GestorImportarActualizacion gestor;
-    private JTextArea areaTexto;
     private JList<String> listaBodegas;
+    private GestorImportarActualizacion gestor;
+
 
     public PantallaImportarActualizacion(PantallaNotificacion pantallaNotificacion) {
         this.gestor = new GestorImportarActualizacion(pantallaNotificacion);
@@ -24,7 +21,7 @@ public class PantallaImportarActualizacion {
 
     public void tomarOpcionActualizacionVinos(List<Bodega> listaTodasBodegas){
         habilitarPantalla();
-        this.bodegasActualizables = gestor.opcionActualizarVinos(listaTodasBodegas);
+        this.bodegasActualizables = gestor.opcionActualizacionVinos(listaTodasBodegas);
         mostrarBodegasActualizables(bodegasActualizables, listaTodasBodegas);
 
     }
@@ -61,8 +58,7 @@ public class PantallaImportarActualizacion {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-
-                    tomarSeleccionBodegaActualizar(listaTodasBodegas);
+                    solicitarSeleccionBodegas(listaTodasBodegas);
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 } catch (InterruptedException ex) {
@@ -78,6 +74,9 @@ public class PantallaImportarActualizacion {
         ventana.getContentPane().add(panelBoton, BorderLayout.SOUTH);
 
     }
+    public void solicitarSeleccionBodegas(List<Bodega> listaTodasBodegas)throws IOException, InterruptedException{
+        tomarSeleccionBodegaActualizar(listaTodasBodegas);
+    }
 
     public void tomarSeleccionBodegaActualizar(List<Bodega> listaTodasBodegas) throws IOException, InterruptedException {
         String bodegaSeleccionada = listaBodegas.getSelectedValue();
@@ -89,7 +88,7 @@ public class PantallaImportarActualizacion {
         }
     }
 
-    public void mostrarResumenBodegasActualizadas(Bodega bodegaSeleccionada, List<Vino> vinosActualizadosOCreados) {
+    public void mostrarResumenBodegasActualizadasCreadas(Bodega bodegaSeleccionada, List<Vino> vinosActualizadosOCreados) {
         // Crear la ventana
         JFrame frame = new JFrame("Resumen de Bodegas Actualizadas");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -119,7 +118,7 @@ public class PantallaImportarActualizacion {
         // Mostrar la ventana
         frame.setVisible(true);
 
-        gestor.buscarEnofiloSuscriptoABodega();
+        gestor.buscarEnofiloSuscriptosABodega();
     }
 
 

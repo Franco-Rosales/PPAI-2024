@@ -7,8 +7,17 @@ public class Vino {
     private String imagenEtiqueta;
     private double precioARS;
     private double notaCataBodega;
+    private int aniada;
     private Maridaje maridaje;
     private Varietal varietal;
+
+    public int getAniada() {
+        return aniada;
+    }
+
+    public void setAniada(int aniada) {
+        this.aniada = aniada;
+    }
 
     public String getImagenEtiqueta() {
         return imagenEtiqueta;
@@ -45,12 +54,13 @@ public class Vino {
     public String getNombre(){
         return nombre;
     }
-    public Vino(String nombre, String imagenEtiqueta, double notaDeCataBodega, double precioARS, Varietal varietal, Maridaje maridaje) {
+    public Vino(String nombre, String imagenEtiqueta, double notaDeCataBodega, double precioARS, int aniada,Varietal varietal, Maridaje maridaje) {
         Varietal nuevoVarietal = crearVarietal(varietal);
         this.nombre = nombre;
         this.imagenEtiqueta = imagenEtiqueta;
         this.notaCataBodega = notaDeCataBodega;
         this.precioARS = precioARS;
+        this.aniada = aniada;
         this.varietal = nuevoVarietal;
         this.maridaje = maridaje;
     }
@@ -59,14 +69,19 @@ public class Vino {
         String datosMaridaje = (maridaje != null) ? maridaje.getDatos() : "-";
 
         return String.format(
-                "Nombre: %s\nImagen: %s\nNota de Cata: %.2f\nPrecio (ARS): %.2f\nVarietal: %s\nMaridaje: %s",
-                nombre, imagenEtiqueta, notaCataBodega, precioARS, descripcionVarietal, datosMaridaje
+                "Nombre: %s\nImagen: %s\nNota de Cata: %.2f\nPrecio (ARS): %.2f\nAniada: %s\nVarietal: %s\nMaridaje: %s",
+                nombre, imagenEtiqueta, notaCataBodega, precioARS, aniada,descripcionVarietal, datosMaridaje
         );
     }
 
 
     public Varietal crearVarietal(Varietal varietal){
-        Varietal nuevoVarietal = new Varietal(varietal.getDescripcion(), varietal.getPorcentComposicion(), varietal.getTipoUva());
+        Varietal nuevoVarietal = new Varietal(varietal.getDescripcion(), varietal.getPorcentajeComposicion(), varietal.getTipoUva());
         return nuevoVarietal;
+    }
+
+    public boolean sosActualizable(Vino vinoExistente){
+        return this.equals(vinoExistente);
+
     }
 }

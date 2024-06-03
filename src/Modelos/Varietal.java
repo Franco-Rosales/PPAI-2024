@@ -2,8 +2,9 @@ package Modelos;
 
 public class Varietal {
     private String descripcion;
-    private int porcentComposicion;
+    private int porcentajeComposicion;
     private TipoUva tipoUva;
+
 
     public String getDescripcion() {
         if (descripcion != null){
@@ -12,8 +13,8 @@ public class Varietal {
         return "-";
     }
 
-    public int getPorcentComposicion() {
-        return porcentComposicion;
+    public int getPorcentajeComposicion() {
+        return porcentajeComposicion;
     }
 
     public TipoUva getTipoUva() {
@@ -22,7 +23,7 @@ public class Varietal {
 
     public Varietal(String descripcion, int porcentComposicion, TipoUva tipoUva) {
         this.descripcion = descripcion;
-        this.porcentComposicion = porcentComposicion;
+        this.porcentajeComposicion = porcentComposicion;
         this.tipoUva = tipoUva;
     }
 }

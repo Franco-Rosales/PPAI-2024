@@ -15,7 +15,8 @@
                 "nombre": "Malbec",
                 "descripcion": "Uva tinta característica de la región de Mendoza."
             }
-        }
+        },
+        "aniada": 2020
     },
     {
         "nombre": "Chardonnay de Salentein",
@@ -33,7 +34,8 @@
                 "nombre": "Chardonnay",
                 "descripcion": "Uva blanca utilizada para la elaboración de vinos blancos."
             }
-        }
+        },
+        "aniada": 2019
     },
     {
         "nombre": "Norton Espumoso",
@@ -51,7 +53,8 @@
                 "nombre": "Pinot Noir",
                 "descripcion": "Uva tinta utilizada en la elaboración de espumosos."
             }
-        }
+        },
+        "aniada": 2021
     },
     {
         "nombre": "Luigi Bosca Cabernet Sauvignon",
@@ -69,7 +72,8 @@
                 "nombre": "Cabernet Sauvignon",
                 "descripcion": "Uva tinta conocida por su estructura y longevidad."
             }
-        }
+        },
+        "aniada": 2018
     },
     {
         "nombre": "Malbec de Bodega Norton",
@@ -87,7 +91,7 @@
                 "nombre": "Malbec",
                 "descripcion": "Uva tinta característica de la región de Mendoza."
             }
-        }
+        },
+        "aniada": 2017
     }
-
 ]

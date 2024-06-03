@@ -11,19 +11,22 @@
                 "nombre": "Malbec de Bodega Norton",
                 "imagenEtiqueta": "https://example.com/images/catena_zapata_malbec.jpg",
                 "notaCataBodega": 4.8,
-                "precioARS": 1200.50
+                "precioARS": 1200.50,
+                "aniada": 2020
             },
             {
                 "nombre": "Cabernet Sauvignon de Catena Zapata",
                 "imagenEtiqueta": "https://example.com/images/catena_zapata_cabernet.jpg",
                 "notaCataBodega": 4.7,
-                "precioARS": 1250.00
+                "precioARS": 1250.00,
+                "aniada": 2020
             },
             {
                 "nombre": "Chardonnay de Catena Zapata",
                 "imagenEtiqueta": "https://example.com/images/catena_zapata_chardonnay.jpg",
                 "notaCataBodega": 4.6,
-                "precioARS": 1100.00
+                "precioARS": 1100.00,
+                "aniada": 2020
             }
         ]
     },
@@ -39,19 +42,22 @@
                 "nombre": "Chardonnay de Salentein",
                 "imagenEtiqueta": "https://example.com/images/salentein_chardonnay.jpg",
                 "notaCataBodega": 4.5,
-                "precioARS": 950.00
+                "precioARS": 950.00,
+                "aniada": 2020
             },
             {
                 "nombre": "Pinot Noir de Salentein",
                 "imagenEtiqueta": "https://example.com/images/salentein_pinot_noir.jpg",
                 "notaCataBodega": 4.4,
-                "precioARS": 1000.50
+                "precioARS": 1000.50,
+                "aniada": 2020
             },
             {
                 "nombre": "Sauvignon Blanc de Salentein",
                 "imagenEtiqueta": "https://example.com/images/salentein_sauvignon_blanc.jpg",
                 "notaCataBodega": 4.6,
-                "precioARS": 980.00
+                "precioARS": 980.00,
+                "aniada": 2020
             }
         ]
     },
@@ -67,7 +73,8 @@
                 "nombre": "Malbec de Bodega Norton",
                 "imagenEtiqueta": "https://example.com/images/norton_espumoso.jpg",
                 "notaCataBodega": 4.3,
-                "precioARS": 1150.75
+                "precioARS": 1150.75,
+                "aniada": 2020
             },
             {
                 "nombre": "Norton Malbec",
@@ -79,7 +86,8 @@
                 "nombre": "Norton Chardonnay",
                 "imagenEtiqueta": "https://example.com/images/norton_chardonnay.jpg",
                 "notaCataBodega": 4.4,
-                "precioARS": 1050.50
+                "precioARS": 1050.50,
+                "aniada": 2020
             }
         ]
     },
@@ -95,19 +103,22 @@
                 "nombre": "Luigi Bosca Cabernet Sauvignon",
                 "imagenEtiqueta": "https://example.com/images/luigi_bosca_cabernet.jpg",
                 "notaCataBodega": 4.7,
-                "precioARS": 1350.00
+                "precioARS": 1350.00,
+                "aniada": 2020
             },
             {
                 "nombre": "Luigi Bosca Malbec",
                 "imagenEtiqueta": "https://example.com/images/luigi_bosca_malbec.jpg",
                 "notaCataBodega": 4.8,
-                "precioARS": 1400.00
+                "precioARS": 1400.00,
+                "aniada": 2020
             },
             {
                 "nombre": "Luigi Bosca Chardonnay",
                 "imagenEtiqueta": "https://example.com/images/luigi_bosca_chardonnay.jpg",
                 "notaCataBodega": 4.6,
-                "precioARS": 1250.00
+                "precioARS": 1250.00,
+                "aniada": 2020
             }
         ]
     },
@@ -123,19 +134,22 @@
                 "nombre": "Trapiche Reserva",
                 "imagenEtiqueta": "https://example.com/images/trapiche_reserva.jpg",
                 "notaCataBodega": 4.6,
-                "precioARS": 1100.30
+                "precioARS": 1100.30,
+                "aniada": 2020
             },
             {
                 "nombre": "Trapiche Malbec",
                 "imagenEtiqueta": "https://example.com/images/trapiche_malbec.jpg",
                 "notaCataBodega": 4.7,
-                "precioARS": 1150.00
+                "precioARS": 1150.00,
+                "aniada": 2020
             },
             {
                 "nombre": "Trapiche Chardonnay",
                 "imagenEtiqueta": "https://example.com/images/trapiche_chardonnay.jpg",
                 "notaCataBodega": 4.5,
-                "precioARS": 1080.50
+                "precioARS": 1080.50,
+                "aniada": 2020
             }
         ]
     },
@@ -151,19 +165,22 @@
                 "nombre": "Zuccardi Malbec",
                 "imagenEtiqueta": "https://example.com/images/zuccardi_malbec.jpg",
                 "notaCataBodega": 4.9,
-                "precioARS": 1400.00
+                "precioARS": 1400.00,
+                "aniada": 2020
             },
             {
                 "nombre": "Zuccardi Cabernet Sauvignon",
                 "imagenEtiqueta": "https://example.com/images/zuccardi_cabernet.jpg",
                 "notaCataBodega": 4.8,
-                "precioARS": 1350.50
+                "precioARS": 1350.50,
+                "aniada": 2020
             },
             {
                 "nombre": "Zuccardi Chardonnay",
                 "imagenEtiqueta": "https://example.com/images/zuccardi_chardonnay.jpg",
                 "notaCataBodega": 4.7,
-                "precioARS": 1200.00
+                "precioARS": 1200.00,
+                "aniada": 2020
             }
         ]
     },
@@ -179,19 +196,22 @@
                 "nombre": "Ruca Malen Pinot Noir",
                 "imagenEtiqueta": "https://example.com/images/ruca_malen_pinot_noir.jpg",
                 "notaCataBodega": 4.4,
-                "precioARS": 1300.20
+                "precioARS": 1300.20,
+                "aniada": 2020
             },
             {
                 "nombre": "Ruca Malen Malbec",
                 "imagenEtiqueta": "https://example.com/images/ruca_malen_malbec.jpg",
                 "notaCataBodega": 4.6,
-                "precioARS": 1350.00
+                "precioARS": 1350.00,
+                "aniada": 2020
             },
             {
                 "nombre": "Ruca Malen Chardonnay",
                 "imagenEtiqueta": "https://example.com/images/ruca_malen_chardonnay.jpg",
                 "notaCataBodega": 4.5,
-                "precioARS": 1200.00
+                "precioARS": 1200.00,
+                "aniada": 2020
             }
         ]
     },
@@ -207,19 +227,22 @@
                 "nombre": "Achaval Ferrer Malbec",
                 "imagenEtiqueta": "https://example.com/images/achaval_ferrer_malbec.jpg",
                 "notaCataBodega": 4.8,
-                "precioARS": 1500.00
+                "precioARS": 1500.00,
+                "aniada": 2020
             },
             {
                 "nombre": "Achaval Ferrer Cabernet Franc",
                 "imagenEtiqueta": "https://example.com/images/achaval_ferrer_cabernet_franc.jpg",
                 "notaCataBodega": 4.7,
-                "precioARS": 1550.50
+                "precioARS": 1550.50,
+                "aniada": 2020
             },
             {
                 "nombre": "Achaval Ferrer Chardonnay",
                 "imagenEtiqueta": "https://example.com/images/achaval_ferrer_chardonnay.jpg",
                 "notaCataBodega": 4.6,
-                "precioARS": 1400.00
+                "precioARS": 1400.00,
+                "aniada": 2020
             }
         ]
     },
@@ -235,19 +258,22 @@
                 "nombre": "Terrazas de los Andes Torrontés",
                 "imagenEtiqueta": "https://example.com/images/terrazas_andes_torrontes.jpg",
                 "notaCataBodega": 4.5,
-                "precioARS": 1050.60
+                "precioARS": 1050.60,
+                "aniada": 2020
             },
             {
                 "nombre": "Terrazas de los Andes Malbec",
                 "imagenEtiqueta": "https://example.com/images/terrazas_andes_malbec.jpg",
                 "notaCataBodega": 4.7,
-                "precioARS": 1100.00
+                "precioARS": 1100.00,
+                "aniada": 2020
             },
             {
                 "nombre": "Terrazas de los Andes Chardonnay",
                 "imagenEtiqueta": "https://example.com/images/terrazas_andes_chardonnay.jpg",
                 "notaCataBodega": 4.6,
-                "precioARS": 1080.50
+                "precioARS": 1080.50,
+                "aniada": 2020
             }
         ]
     },
@@ -263,19 +289,22 @@
                 "nombre": "Séptima Syrah",
                 "imagenEtiqueta": "https://example.com/images/septima_syrah.jpg",
                 "notaCataBodega": 4.6,
-                "precioARS": 1250.00
+                "precioARS": 1250.00,
+                "aniada": 2020
             },
             {
                 "nombre": "Séptima Malbec",
                 "imagenEtiqueta": "https://example.com/images/septima_malbec.jpg",
                 "notaCataBodega": 4.7,
-                "precioARS": 1300.50
+                "precioARS": 1300.50,
+                "aniada": 2020
             },
             {
                 "nombre": "Séptima Chardonnay",
                 "imagenEtiqueta": "https://example.com/images/septima_chardonnay.jpg",
                 "notaCataBodega": 4.5,
-                "precioARS": 1180.00
+                "precioARS": 1180.00,
+                "aniada": 2020
             }
         ]
     },
@@ -291,19 +320,22 @@
                 "nombre": "Andeluna Altitud",
                 "imagenEtiqueta": "https://example.com/images/andeluna_altitud.jpg",
                 "notaCataBodega": 4.7,
-                "precioARS": 1450.90
+                "precioARS": 1450.90,
+                "aniada": 2020
             },
             {
                 "nombre": "Andeluna Malbec",
                 "imagenEtiqueta": "https://example.com/images/andeluna_malbec.jpg",
                 "notaCataBodega": 4.8,
-                "precioARS": 1500.00
+                "precioARS": 1500.00,
+                "aniada": 2020
             },
             {
                 "nombre": "Andeluna Chardonnay",
                 "imagenEtiqueta": "https://example.com/images/andeluna_chardonnay.jpg",
                 "notaCataBodega": 4.6,
-                "precioARS": 1350.50
+                "precioARS": 1350.50,
+                "aniada": 2020
             }
         ]
     },
@@ -319,19 +351,22 @@
                 "nombre": "Viña Cobos Felino Malbec",
                 "imagenEtiqueta": "https://example.com/images/vina_cobos_felino_malbec.jpg",
                 "notaCataBodega": 4.8,
-                "precioARS": 1600.00
+                "precioARS": 1600.00,
+                "aniada": 2020
             },
             {
                 "nombre": "Viña Cobos Bramare Cabernet Sauvignon",
                 "imagenEtiqueta": "https://example.com/images/vina_cobos_bramare_cabernet.jpg",
                 "notaCataBodega": 4.7,
-                "precioARS": 1700.00
+                "precioARS": 1700.00,
+                "aniada": 2020
             },
             {
                 "nombre": "Viña Cobos Chardonnay",
                 "imagenEtiqueta": "https://example.com/images/vina_cobos_chardonnay.jpg",
                 "notaCataBodega": 4.6,
-                "precioARS": 1500.50
+                "precioARS": 1500.50,
+                "aniada": 2020
             }
         ]
     }

@@ -11,7 +11,6 @@ public class PantallaNotificacion {
         System.out.println("Notificando a los enófilos: " + enofilosANotificar);
         System.out.println("Notificación enviada");
 
-        // Crear un Timer para mostrar la ventana después de 5 segundos (5000 milisegundos)
         Timer timer = new Timer(3000, e -> {
             // Crear y configurar la ventana
             JFrame frame = new JFrame("Enviar Notificación a Enófilo");

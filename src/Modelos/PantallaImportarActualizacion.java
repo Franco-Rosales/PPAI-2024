@@ -24,7 +24,7 @@ public class PantallaImportarActualizacion {
 
     public void tomarOpcionActualizacionVinos(List<Bodega> listaTodasBodegas){
         habilitarPantalla();
-        this.bodegasActualizables = gestor.opcionActualizacionVinos(listaTodasBodegas);
+        this.bodegasActualizables = gestor.opcionActualizarVinos(listaTodasBodegas);
         mostrarBodegasActualizables(bodegasActualizables, listaTodasBodegas);
 
     }
@@ -89,7 +89,7 @@ public class PantallaImportarActualizacion {
         }
     }
 
-    public void mostrarResumenBodegasActualizadasCreadas(Bodega bodegaSeleccionada, List<Vino> vinosActualizadosOCreados) {
+    public void mostrarResumenBodegasActualizadas(Bodega bodegaSeleccionada, List<Vino> vinosActualizadosOCreados) {
         // Crear la ventana
         JFrame frame = new JFrame("Resumen de Bodegas Actualizadas");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -119,7 +119,7 @@ public class PantallaImportarActualizacion {
         // Mostrar la ventana
         frame.setVisible(true);
 
-        gestor.buscarEnofilosSuscriptosABodega();
+        gestor.buscarEnofiloSuscriptoABodega();
     }
 
 

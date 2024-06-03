@@ -6,7 +6,7 @@ public class Vino {
     private String nombre;
     private String imagenEtiqueta;
     private double precioARS;
-    private double notaDeCataBodega;
+    private double notaCataBodega;
     private Maridaje maridaje;
     private Varietal varietal;
 
@@ -18,8 +18,8 @@ public class Vino {
         return precioARS;
     }
 
-    public double getNotaDeCataBodega() {
-        return notaDeCataBodega;
+    public double getNotaCataBodega() {
+        return notaCataBodega;
     }
 
     public Maridaje getMaridaje() {
@@ -38,26 +38,35 @@ public class Vino {
         this.precioARS = precioARS;
     }
 
-    public void setNotaDeCataBodega(double notaDeCataBodega) {
-        this.notaDeCataBodega = notaDeCataBodega;
+    public void setNotaCataBodega(double notaCataBodega) {
+        this.notaCataBodega = notaCataBodega;
     }
 
     public String getNombre(){
         return nombre;
     }
     public Vino(String nombre, String imagenEtiqueta, double notaDeCataBodega, double precioARS, Varietal varietal, Maridaje maridaje) {
-        Varietal nuevoVarietal = new Varietal(varietal.getDescripcion(), varietal.getPorcentComposicion(), varietal.getTipoUva());
+        Varietal nuevoVarietal = crearVarietal(varietal);
         this.nombre = nombre;
         this.imagenEtiqueta = imagenEtiqueta;
-        this.notaDeCataBodega = notaDeCataBodega;
+        this.notaCataBodega = notaDeCataBodega;
         this.precioARS = precioARS;
         this.varietal = nuevoVarietal;
         this.maridaje = maridaje;
     }
     public String getDatos() {
+        String descripcionVarietal = (varietal != null) ? varietal.getDescripcion() : "-";
+        String datosMaridaje = (maridaje != null) ? maridaje.getDatos() : "-";
+
         return String.format(
                 "Nombre: %s\nImagen: %s\nNota de Cata: %.2f\nPrecio (ARS): %.2f\nVarietal: %s\nMaridaje: %s",
-                nombre, imagenEtiqueta, notaDeCataBodega, precioARS, varietal, maridaje
+                nombre, imagenEtiqueta, notaCataBodega, precioARS, descripcionVarietal, datosMaridaje
         );
+    }
+
+
+    public Varietal crearVarietal(Varietal varietal){
+        Varietal nuevoVarietal = new Varietal(varietal.getDescripcion(), varietal.getPorcentComposicion(), varietal.getTipoUva());
+        return nuevoVarietal;
     }
 }

@@ -20,6 +20,7 @@ public class PantallaImportarActualizacion {
         this.gestor = new GestorImportarActualizacion(pantallaNotificacion);
         gestor.setPantalla(this);
 
+
     }
 
     public void tomarOpcionActualizacionVinos(List<Bodega> listaTodasBodegas){

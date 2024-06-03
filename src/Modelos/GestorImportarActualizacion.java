@@ -61,15 +61,6 @@ public class GestorImportarActualizacion {
             List<Bodega> bodegasFromJson = gson.fromJson(reader, bodegaListType);
 
             for (Bodega bodega : bodegasFromJson) {
-                // Imprimir el nombre de la bodega
-                System.out.println("Bodega: " + bodega.getDatos());
-
-                // Imprimir los nombres de los vinos de la bodega
-                System.out.println("Vinos de la bodega:");
-                for (Vino vino : bodega.getVinos()) {
-                    System.out.println("- " + vino.getNombre());
-                }
-
                 // Agregar la bodega a la lista de bodegas
                 Listabodegas.add(bodega);
 
@@ -81,15 +72,15 @@ public class GestorImportarActualizacion {
     }
 
 
-    public List<String> opcionActualizacionVinos(List<Bodega> listaBodegas){
-        return buscarBodegasActualizacion(listaBodegas);
+    public List<String> opcionActualizarVinos(List<Bodega> listaBodegas){
+        return buscarBodegaActualizacion(listaBodegas);
     }
 
     public Date obtenerFechaActual(){
         //retornar la fecha actual
         return new Date();
     }
-    public List<String> buscarBodegasActualizacion(List<Bodega> listaBodegas) {
+    public List<String> buscarBodegaActualizacion(List<Bodega> listaBodegas) {
 
         List<String> bodegasConActualizacion = new ArrayList<>();
 
@@ -106,9 +97,7 @@ public class GestorImportarActualizacion {
 
 
 
-    public void tomarSeleccionBodega(String bodegaSeleccionada, List<Bodega> listaBodegas) {
-
-        System.out.println("Bodega seleccionada: " + bodegaSeleccionada);
+    public void tomarSeleccionDeBodega(String bodegaSeleccionada, List<Bodega> listaBodegas) {
 
         for (Bodega bodega: listaBodegas){
             if (bodega.getDatos().equals(bodegaSeleccionada)){
@@ -134,10 +123,8 @@ public class GestorImportarActualizacion {
 
         // Obtener la respuesta y parsearla a una lista de vinos
         String respuestaConActualizaciones = response.body();
-        System.out.println(respuestaConActualizaciones);
 
         List<Vino> actualizaciones = parsearRespuesta(respuestaConActualizaciones);
-        System.out.println(actualizaciones);
 
         // Lista para almacenar vinos actualizados o creados
         List<Vino> vinosProcesados = new ArrayList<>();
@@ -147,14 +134,14 @@ public class GestorImportarActualizacion {
         for (Vino vino : actualizaciones) {
             Optional<Vino> vinoExistente = buscarVinoPorNombre(vino.getNombre(), bodegaSeleccionadaString, listaBodegas);
             if (vinoExistente.isPresent()) {
-                actualizarVinosExistentes(vinoExistente.get(), vino);
+                actualizarVinos(vinoExistente.get(), vino);
                 vinosProcesados.add(vinoExistente.get());
             } else {
                 buscarTipoUva(vino);
                 vinosProcesados.add(vino);
             }
         }
-        pantalla.mostrarResumenBodegasActualizadasCreadas(bodegaSeleccionada, vinosProcesados);
+        pantalla.resumenBodegasActualizadas(bodegaSeleccionada, vinosProcesados);
 
     }
 
@@ -170,14 +157,14 @@ public class GestorImportarActualizacion {
                     this.uvaSeleccionada = uva;
                 }
             }
-            buscarMaridaje(vino);
+            buscarTipoMaridaje(vino);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
 
-    private void buscarMaridaje(Vino vino) {
+    private void buscarTipoMaridaje(Vino vino) {
         Gson gson = new Gson();
         Type maridajesListType = new TypeToken<ArrayList<Maridaje>>() {}.getType();
         try (FileReader reader = new FileReader("ApiBodegas/maridajes.json")) {
@@ -197,16 +184,14 @@ public class GestorImportarActualizacion {
     }
 
 
-    private void actualizarVinosExistentes(Vino vinoExistente, Vino datoDeActualizacionVino) {
-        bodegaSeleccionada.actualizarVinos(vinoExistente, datoDeActualizacionVino);
-        System.out.println("Vino actualizado: " + vinoExistente.getNombre());
+    private void actualizarVinos(Vino vinoExistente, Vino datoDeActualizacionVino) {
+        bodegaSeleccionada.actualizarVino(vinoExistente, datoDeActualizacionVino);
 
     }
 
     private void crearVinos(Vino vino) {
         // Agregar el nuevo vino a la bodega correspondiente
         bodegaSeleccionada.crearVino(vino, uvaSeleccionada, maridajeSeleccionado);
-        System.out.println("Vino creado: " + vino.getNombre());
     }
 
     private List<Vino> parsearRespuesta(String respuestaConActualizaciones) {
@@ -238,13 +223,12 @@ public class GestorImportarActualizacion {
         return Optional.empty();
     }
 
-    public void buscarEnofilosSuscriptosABodega(){
+    public void buscarEnofiloSuscriptoABodega(){
         Gson gson = new Gson();
         Type enofiloType = new TypeToken<ArrayList<Enofilo>>() {}.getType();
         try (FileReader reader = new FileReader("ApiBodegas/enofilos.json")) {
             List<Enofilo> enofilos = gson.fromJson(reader, enofiloType);
             listaEnofilos.addAll(enofilos);
-            System.out.println(listaEnofilos);
             for (Enofilo enofilo : listaEnofilos) {
                 String nombreUsuario = enofilo.obtenerNombreEnofiloSuscripto(bodegaSeleccionada);
                 if (!nombreUsuario.equals("-")) {

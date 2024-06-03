@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0aa97b36-5718-449b-a4c7-cb25996c14ea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelos/Bodega.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/Bodega.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelos/GestorImportarActualizacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/GestorImportarActualizacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelos/PantallaImportarActualizacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/PantallaImportarActualizacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelos/Vino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelos/Vino.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

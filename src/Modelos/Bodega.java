@@ -1,6 +1,5 @@
 package Modelos;
 
-import javax.swing.*;
 import java.util.*;
 
 public class Bodega {
@@ -57,7 +56,7 @@ public class Bodega {
         vinos.add(vino);
     }
 
-    public void actualizarVino (Vino vinoExistente, Vino datoDeActualizacionVino){
+    public void actualizarVinos(Vino vinoExistente, Vino datoDeActualizacionVino){
         for(Vino vino : vinos){
             if(vino.equals(vinoExistente)){
                 System.out.println("Precio antes: "+vino.getPrecioARS());

@@ -87,10 +87,11 @@ public class GestorImportarActualizacion {
 
         for (Bodega bodega : listaBodegas) {
             if (bodega.tieneActualizacion(fechaActual)) { // Preguntar a cada bodega si necesita actualización
-                bodegasConActualizacion.add(bodega.getDatos()); // Agregar bodega a la lista si necesita actualización
+                bodegasConActualizacion.add(bodega.getDatos());
+                 // Agregar bodega a la lista si necesita actualización
             }
         }
-        return bodegasConActualizacion; // Devolver la lista de bodegas que necesitan actualización
+        return bodegasConActualizacion;
     }
 
     public void tomarSeleccionBodega(String bodegaSeleccionada, List<Bodega> listaBodegas) {
@@ -107,31 +108,36 @@ public class GestorImportarActualizacion {
     }
 
     public void obtenerActualizacionesBodega(String bodegaSeleccionadaString, List<Bodega> listaBodegas) throws IOException, InterruptedException {
-        // Construir la dirección del endpoint con el nombre de la bodega seleccionada
-        String direccion = "http://localhost:3000/vinos";
-                //+ URLEncoder.encode(bodegaSeleccionada, StandardCharsets.UTF_8.toString());
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(direccion))
-                .build();
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        try{// Construir la dirección del endpoint con el nombre de la bodega seleccionada
+            String direccion = "http://localhost:3000/vinos";
+            //+ URLEncoder.encode(bodegaSeleccionada, StandardCharsets.UTF_8.toString());
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(direccion))
+                    .build();
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-        // Obtener la respuesta y parsearla a una lista de vinos
-        String respuestaConActualizaciones = response.body();
-        List<Vino> actualizaciones = parsearRespuesta(respuestaConActualizaciones);
+            // Obtener la respuesta y parsearla a una lista de vinos
+            String respuestaConActualizaciones = response.body();
+            List<Vino> actualizaciones = parsearRespuesta(respuestaConActualizaciones);
 
-        // Lógica para decidir si crear o actualizar un vino
-        for (Vino vino : actualizaciones) {
-            Optional<Vino> vinoExistente = buscarVinoPorNombre(vino.getNombre(), bodegaSeleccionadaString, listaBodegas);
-            if (vinoExistente.isPresent()) {
-                actualizarVinosExistentes(vinoExistente.get(), vino);
-                this.actualizaciones.add(vinoExistente.get());
-            } else {
-                buscarTipoUva(vino);
-                this.actualizaciones.add(vino);
+            // Lógica para decidir si crear o actualizar un vino
+            for (Vino vino : actualizaciones) {
+                Optional<Vino> vinoExistente = buscarVinoPorNombre(vino.getNombre(), bodegaSeleccionadaString, listaBodegas);
+                if (vinoExistente.isPresent()) {
+                    actualizarVinosExistentes(vinoExistente.get(), vino);
+                    this.actualizaciones.add(vinoExistente.get());
+                } else {
+                    buscarTipoUva(vino);
+                    this.actualizaciones.add(vino);
+                }
             }
+            pantalla.mostrarResumenBodegasActualizadasCreadas(bodegaSeleccionada, this.actualizaciones);}
+        catch (Exception e){
+            e.printStackTrace();
+            System.out.println("No se pudo conectar con el servidor");
         }
-        pantalla.mostrarResumenBodegasActualizadasCreadas(bodegaSeleccionada, this.actualizaciones);
+
 
     }
 

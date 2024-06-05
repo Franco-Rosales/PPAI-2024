@@ -69,8 +69,18 @@ public class Vino {
         String datosMaridaje = (maridaje != null) ? maridaje.getDatos() : "-";
 
         return String.format(
-                "Nombre: %s\nImagen: %s\nNota de Cata: %.2f\nPrecio (ARS): %.2f\n Añiada: %s\nVarietal: %s\nMaridaje: %s",
-                nombre, imagenEtiqueta, notaCataBodega, precioARS,aniada, descripcionVarietal, datosMaridaje
+                "<html>" +
+                        "<div style='font-family: SansSerif; padding: 10px;'>" +
+                        "<h2 style='color: #2980b9;'>%s</h2>" +
+                        "<img src='%s' alt='Imagen del Vino' style='width:100%%; height:auto;' /><br/>" +
+                        "<p><strong>Nota de Cata:</strong> %.2f</p>" +
+                        "<p><strong>Precio (ARS):</strong> %.2f</p>" +
+                        "<p><strong>Añada:</strong> %s</p>" +
+                        "<p><strong>Varietal:</strong> %s</p>" +
+                        "<p><strong>Maridaje:</strong> %s</p>" +
+                        "</div>" +
+                        "</html>",
+                nombre, imagenEtiqueta, notaCataBodega, precioARS, aniada, descripcionVarietal, datosMaridaje
         );
     }
 
